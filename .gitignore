@@ -10,4 +10,7 @@ Homestead.yaml
 
 # IDE
 /.idea
+.iml
+
+# Mac_OSX
 /.DS_Store
