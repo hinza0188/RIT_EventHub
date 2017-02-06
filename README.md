@@ -10,10 +10,8 @@
 # RIT_EventHub
 SWEN-444 group1 project
 
-<dev environment>
-run 'composer update' in terminal
-
-testing :)
+#Dev Environment
+Run 'composer update' in terminal for proper Laravel running
 
 ## About Laravel
 
