@@ -3,12 +3,12 @@
 <html lang="en">
 
 <head>
-    <title>Test</title>
+    <title>Account</title>
 
 </head>
 
 <body>
-    <h1>:D Testing lol D:</h1>
+<h1> account </h1>
 </body>
 
 </html>
