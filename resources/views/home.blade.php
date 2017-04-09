@@ -59,14 +59,63 @@
 
 
         <section class="module content white">
+
+            {{-- Begin Trending Element HTML--}}
             <div class="content-container">
-
-
                 <h2>Trending</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil consequuntur, nesciunt dicta, esse rem ducimus itaque quis. Adipisci ullam nam qui illum debitis sit ad in delectus, repudiandae non dolorum! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit veritatis, facere aliquid itaque tempore consequatur nihil sint enim aliquam id saepe magnam totam repellat placeat a fugit nulla molestias voluptas.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta cum distinctio eum asperiores rem enim fugit eaque voluptas est laboriosam in repudiandae architecto placeat, illum atque quasi explicabo, culpa, molestias!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit voluptas, aperiam quae provident, recusandae rem quis. Ut quaerat, quasi iste voluptate et dolorem atque sed neque voluptates, molestias dolor enim!</p>
 
+                <div class="trending-container">
+
+                    <img class="trending-photo" src="../images/temp/HvZ.jpg">
+
+                    <div class="content">
+
+
+                        <div class="column-left">
+                            <h1>Humans VS Zombies</h1>
+                            <hr>
+                            <p class="description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing
+                                elit. Etiam maximus, mauris et mattis semper, mi
+                                sem elementum nisi, id vulputate arcu lectus a lectus.
+                                Ut tempor, eros sit amet placerat mattis, lectus sem interdum
+                                lectus, non volutpat mi tellus vitae massa.
+                            </p>
+                        </div>
+
+                        <div class="column-right">
+
+
+                            <div class="attendance">
+                                <img class="icon" src="../images/temp/icons/person-icon.png">
+                                <h3>188/200</h3>
+                            </div>
+                            <div class="location">
+                                <img class="icon" src="../images/temp/icons/map-icon.png">
+                                <h3>NRH</h3>
+                            </div>
+                            <div class="time">
+                                <img class="icon" src="../images/temp/icons/clock-icon.png">
+                                <h3>
+                                    04/03/2017
+                                    08:00PM
+                                </h3>
+                            </div>
+
+                            <div class="buttons">
+                                <button class="join">Join</button>
+                                <button class="interested">Interested</button>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
             </div>
+            {{-- End Trending HTML--}}
+
         </section>
 
         <section class="module content lightblue">
