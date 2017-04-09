@@ -14,11 +14,48 @@
 
 
     <section id="banner" class="module parallax banner black">
+
+        <div class="main-container">
+            <div class="banner-content">
+
+                <div class="column-left">
+
+                    <div class="mission-statement">
+
+                        <h2>Our Mission</h2>
+                        <hr>
+                        <p class="statement">
+                            RIT is full of people from all walks of life, each with their own
+                            interests and ideologies. Our goal is to provide a simple way for
+                            students to connect with other students. Organizing events with
+                            your friends and fellow students should be intuitive and engaging.
+                        </p>
+
+                        <p>
+                            Enter our solution, the RIT Event Hub! A place where you can create,
+                            organize, and join events held by clubs, individuals and faculty.
+                            So what are you waiting for? Go ahead and join some events and meet
+                            some new people!
+                        </p>
+
+
+                    </div>
+
+                </div>
+
+                <div class="column-right">
+
+                    <h1 id="welcome">Welcome!</h1>
+                </div>
+            </div>
+        </div>
     </section>
 
 
 
     <main class="main-container">
+
+
 
 
         <section class="module content white">
