@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+    <!--
+    This is currently not used, because base url redirects to the login page
+    If we agree with a page before login, this will be used later
+    -->
     <div class="container">
         <div class="row">
             <div class="col-md-10">

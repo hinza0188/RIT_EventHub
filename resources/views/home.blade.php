@@ -5,19 +5,14 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             @if(Auth::check())
-            <div class="card card-success">
-                <div class="card-header">Great</div>
-                <div class="card">
-                    <br>Good :)
-                </div>
+            <div class="card card-primary">
+                <br>Great, you are logged in :)
+            </div>
             @else
             <div class="card card-danger">
-                <div class="card-header">You should not be able to see this</div>
-                <div class="card">
-                    <br>Bad :(
-                </div>
-            @endif
+                <br>Bad :( you shouldn't be able to see this
             </div>
+            @endif
         </div>
     </div>
 </div>
