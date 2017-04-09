@@ -1,4 +1,3 @@
-<!-- This is laravel's auto-generated layout file -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
