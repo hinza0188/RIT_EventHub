@@ -16,5 +16,11 @@ class UsersTableSeeder extends Seeder
             'email'    => str_random(3).(string)rand(1000,9999).'@rit.edu',
             'password' => bcrypt('p@ssword')
         ]);
+        DB::table('users')->insert([
+            'first_name'=> 'admin',
+            'last_name'=> 'admin',
+            'email'    => 'admin@rit.edu',
+            'password' => bcrypt('p@ssword')
+        ]);
     }
 }
