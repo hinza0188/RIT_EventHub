@@ -1,0 +1,12 @@
+body{
+    background-color: #f2f2f2;
+}
+.main-container {
+
+    margin: auto;
+    min-width: 750px;
+    max-width: 960px;
+}
+.content-container{
+    padding: 30px;
+}

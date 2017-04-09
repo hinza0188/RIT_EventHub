@@ -45,7 +45,7 @@
                 text-align: center;
             }
 
-            .title {
+            .welcome {
                 font-size: 84px;
             }
 
