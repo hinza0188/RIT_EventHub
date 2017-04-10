@@ -8,7 +8,7 @@ function loadParallaxEffect() {
     [].slice.call(parallax).forEach(function(el,i){
 
       var windowYOffset = window.pageYOffset,
-          elBackgrounPos = "50%" + (windowYOffset * speed) + "px";
+          elBackgrounPos = "50% " + (windowYOffset * speed) + "px";
 
       el.style.backgroundPosition = elBackgrounPos;
 
@@ -17,6 +17,8 @@ function loadParallaxEffect() {
   };
 }
 
+
+// fade in effect
 $(window).on("load",function() {
   $(window).scroll(function() {
     var windowBottom = $(this).scrollTop() + $(this).innerHeight();
