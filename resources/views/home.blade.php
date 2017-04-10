@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('layouts.app')
 
 <!-- <Jay>: Not within my scope -->
 @section('content')
