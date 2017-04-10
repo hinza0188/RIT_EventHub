@@ -1,0 +1,174 @@
+body{
+    background-color: #f2f2f2;
+}
+.main-container {
+
+    margin: auto;
+    min-width: 750px;
+    max-width: 960px;
+}
+.content-container{
+    padding: 30px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+
+.column-left{
+    width: 50%;
+    float: left;
+
+}
+.column-right{
+    width: 50%;
+    float: left;
+}
+
+
+.banner-content{
+   /*position: relative;*/
+   /*bottom: 300px;*/
+}
+
+
+/*      Mission Statement css                */
+
+.mission-statement{
+    padding: 20px;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 300px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    position: relative;
+    left: -60px;
+    top: -10px;
+
+}
+.mission-statement hr {
+    border-color: orange;
+}
+.mission-statement h2 {
+    font-size: 10pt;
+    margin-bottom: 0;
+    padding: 0px;
+    margin-top: 0;
+}
+.mission-statement p {
+    font-size: 11pt;
+    text-indent: 25px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+#welcome{
+    color: white;
+    position: relative;
+    font-size: 50pt;
+    left: 130px;
+    top: 80px;
+    text-shadow:
+            -1px -1px 0 #000,
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000;
+
+}
+
+@media all and (max-width: 850px) {
+    #welcome{
+
+        font-size: 40pt;
+        left: 20px;
+    }
+    .mission-statement{
+        left:0;
+    }
+}
+
+
+
+/*       Trending.css         */
+
+.trending-container {
+    overflow: hidden; /*prevent content from overflowing*/
+    background-color: #e2e0e0;
+    padding: 10px;
+    border-radius: 3px;
+
+}
+
+.trending-container .trending-photo {
+    min-width: 200px;
+    max-width: 300px;
+    float: left;
+    padding: 10px;
+    padding-top: 2.5%;
+    margin-right: 10px;
+    position: relative;
+}
+
+.trending-container img {
+    float: left;
+}
+
+.trending-container .content {
+    overflow: hidden;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 3px;
+    background-color: white;
+}
+.trending-container .content h1 {
+
+}
+.trending-container .description {
+    font-size: 12pt;
+}
+
+.trending-container .attendance {
+    clear: both;
+}
+
+.trending-container .location {
+    clear: both;
+}
+
+.trending-container .time {
+    clear: both;
+}
+
+.trending-container .buttons{
+    margin: auto;
+    clear: both;
+}
+
+.trending-container .icon {
+    clear: both;
+    width: 50px;
+    margin-left: 20px;
+}
+
+.trending-container h3 {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.trending-container button {
+    width: 40%;
+    margin: 4%;
+}
+
+.trending-container .join {
+    background-color: #2ecc71;
+    border-color: #2ecc71;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+.trending-container .interested {
+    background-color: #3498db;
+    border-color: #3498db;
+    border-radius: 5px;
+    padding: 8px;
+}
