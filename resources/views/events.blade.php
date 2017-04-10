@@ -1,23 +1,17 @@
-<!DOCTYPE html>
+@extends('layouts.basePage')
 
-<html lang="en">
+@section('content')
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h1> browse all events</h1>
+                <ul>
+                    @foreach ($events as $event)
+                        <li> {{ $event }} </li>
+                    @endforeach
+                </ul>
 
-<head>
-    <title>Browse Events</title>
-
-</head>
-
-<body>
-<h1> browse all events</h1>
-
-    <ul>
-    @foreach ($events as $event)
-        <li> {{ $event }} </li>
-    @endforeach
-    </ul>
-
-</body>
-
-</html>
-
-<?php
+            </div>
+        </div>
+    </div>
+@endsection
