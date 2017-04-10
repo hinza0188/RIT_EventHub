@@ -7,13 +7,15 @@
     <script src="{{asset('js/jquery-3.2.0.min.js')}}"></script>
     <link rel="stylesheet" href="{{asset('css/dashboard.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('css/parallax/style.css')}}" type="text/css">
-
+    <link rel="stylesheet" href="{{asset('css/slideshow/slideshow.css')}}" type="text/css">
+    <script src="{{asset('js/slideshow.js')}}"></script>
+    <script src="{{asset('js/scroll.js')}}"></script>
 </head>
 
 <body>
 
 
-    <section id="banner" class="module parallax banner black">
+    <section id="banner" class="module parallax banner black" style="opacity: 1">
 
         <div class="main-container">
             <div class="banner-content">
@@ -57,64 +59,106 @@
 
 
 
-
         <section class="module content white">
 
-            {{-- Begin Trending Element HTML--}}
-            <div class="content-container">
-                <h2>Trending</h2>
 
-                <div class="trending-container">
-
-                    <img class="trending-photo" src="../images/temp/HvZ.jpg">
-
-                    <div class="content">
+            {{-- Begin Slideshow --}}
+            <div class="slideshow-container">
 
 
-                        <div class="column-left">
-                            <h1>Humans VS Zombies</h1>
-                            <hr>
-                            <p class="description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing
-                                elit. Etiam maximus, mauris et mattis semper, mi
-                                sem elementum nisi, id vulputate arcu lectus a lectus.
-                                Ut tempor, eros sit amet placerat mattis, lectus sem interdum
-                                lectus, non volutpat mi tellus vitae massa.
-                            </p>
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 3</div>
+
+                    {{-- Begin Trending Element HTML--}}
+                    <div class="content-container">
+                        <h2>Trending</h2>
+
+                        <div class="trending-container">
+
+                            <img class="trending-photo" src="../images/temp/HvZ.jpg">
+
+                            <div class="content">
+
+
+                                <div class="column-left">
+                                    <h1>Humans VS Zombies</h1>
+                                    <hr>
+                                    <p class="description">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing
+                                        elit. Etiam maximus, mauris et mattis semper, mi
+                                        sem elementum nisi, id vulputate arcu lectus a lectus.
+                                        Ut tempor, eros sit amet placerat mattis, lectus sem interdum
+                                        lectus, non volutpat mi tellus vitae massa.
+                                    </p>
+                                </div>
+
+                                <div class="column-right">
+
+
+                                    <div class="attendance">
+                                        <img class="icon" src="../images/temp/icons/person-icon.png">
+                                        <h3>188/200</h3>
+                                    </div>
+                                    <div class="location">
+                                        <img class="icon" src="../images/temp/icons/map-icon.png">
+                                        <h3>NRH</h3>
+                                    </div>
+                                    <div class="time">
+                                        <img class="icon" src="../images/temp/icons/clock-icon.png">
+                                        <h3>
+                                            04/03/2017
+                                            08:00PM
+                                        </h3>
+                                    </div>
+
+                                    <div class="buttons">
+                                        <button class="join">Join</button>
+                                        <button class="interested">Interested</button>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
                         </div>
-
-                        <div class="column-right">
-
-
-                            <div class="attendance">
-                                <img class="icon" src="../images/temp/icons/person-icon.png">
-                                <h3>188/200</h3>
-                            </div>
-                            <div class="location">
-                                <img class="icon" src="../images/temp/icons/map-icon.png">
-                                <h3>NRH</h3>
-                            </div>
-                            <div class="time">
-                                <img class="icon" src="../images/temp/icons/clock-icon.png">
-                                <h3>
-                                    04/03/2017
-                                    08:00PM
-                                </h3>
-                            </div>
-
-                            <div class="buttons">
-                                <button class="join">Join</button>
-                                <button class="interested">Interested</button>
-                            </div>
-
-
-                        </div>
-
                     </div>
+                    {{-- End Trending HTML--}}
 
+
+
+                    <div class="text">Caption Text</div>
                 </div>
+
+
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 3</div>
+                    <img src="img2.jpg" style="width:100%">
+                    <div class="text">Caption Two</div>
+                </div>
+
+
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 3</div>
+                    <img src="img3.jpg" style="width:100%">
+                    <div class="text">Caption Three</div>
+                </div>
+
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
-            {{-- End Trending HTML--}}
+            <br>
+
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+            {{-- End Slideshow --}}
+
+
+
 
         </section>
 
@@ -145,34 +189,12 @@
 
 
 
-    <script>
-        // TODO: Remove this script and properly load this code from js/scroll.js
-        (function(){
-
-            var parallax = document.querySelectorAll(".parallax"),
-                    speed = 0.5;
-
-            window.onscroll = function(){
-                [].slice.call(parallax).forEach(function(el,i){
-
-                    var windowYOffset = window.pageYOffset,
-                            elBackgrounPos = "50%" + (windowYOffset * speed) + "px";
-
-                    el.style.backgroundPosition = elBackgrounPos;
-
-                });
-
-            };
-
-
-        })();
-
-
-
-
-    </script>
-
-
+<script>
+    // initialize slideshow with first element
+    $(document).ready(function () {
+       currentSlide(1);
+    });
+</script>
 
 </body>
 

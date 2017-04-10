@@ -117,7 +117,9 @@ body{
     border-radius: 3px;
     background-color: white;
 }
+.trending-container .content h1 {
 
+}
 .trending-container .description {
     font-size: 12pt;
 }
