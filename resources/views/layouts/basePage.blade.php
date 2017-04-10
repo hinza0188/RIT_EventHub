@@ -167,11 +167,11 @@
             <header id="header">
                 <div id="header-inner">
                     <div id="logo">
-                        <h1><a href="/home.blade.php">RIT EventHub</a></h1>
+                        <h1><a href="/">RIT EventHub</a></h1>
                     </div>
                     <div id="userNav">
                         <ul>
-                        <li>Welcome, <a href="/account.blade.php">Jimmy</a></li>
+                        <li>Welcome, <a href="/account">Jimmy</a></li>
                         <li>
                             <a href="{{ route('logout') }}"
                                onclick="event.preventDefault();
@@ -190,35 +190,20 @@
             </header>
         </div>
             <div class="topNav" id="mainNav">
-                <a href="/home.blade.php" type="button">Home</a>
-                <a href="/browse.blade.php" type="button">Browse</a>
-                <a href="/create.blade.php" type="button">Create</a>
-                <a href="/account.blade.php" type="button">Account</a>
+                <a href="/" type="button">Home</a>
+                <a href="/browse" type="button">Browse</a>
+                <a href="/create" type="button">Create</a>
+                <a href="/account" type="button">Account</a>
                 <form class="searchBar" action="/browse.blade.php" method="get">
                     <input type="text" name="searchContent" value="Search by name, tag, etc.">
-                    <input type="submit" name="submit" value="Search">           
+                    <input type="submit" name="submit" value="Search">
                 </form>
             </div>
-
-            <div id="container-outer" class="container">
-                <div class=row>
-                    <div class="col-md-8 col-md-offset2">
-                        <div id="container-inner">
-                            <main>
-                                <article>
-                                
-                                    Put Stuff Here
-                                    
-                                </article>                             
-                            </main>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @yield('content')
 
 
 
-            <footer>@ WildForce 2017. All rights reserved</footer>
+        <footer>@ WildForce 2017. All rights reserved</footer>
         </div>
 
 
