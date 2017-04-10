@@ -1,5 +1,6 @@
-(function(){
 
+
+function loadParallaxEffect() {
   var parallax = document.querySelectorAll(".parallax"),
       speed = 0.5;
 
@@ -14,9 +15,7 @@
     });
 
   };
-
-
-})();
+}
 
 $(window).on("load",function() {
   $(window).scroll(function() {

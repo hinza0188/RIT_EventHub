@@ -194,6 +194,9 @@
     $(document).ready(function () {
        currentSlide(1);
     });
+
+
+    loadParallaxEffect();
 </script>
 
 </body>
