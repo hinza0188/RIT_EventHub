@@ -167,7 +167,12 @@
 
 
 
-
+<script src="{{asset('js/jquery-3.2.0.min.js')}}"></script>
+<link rel="stylesheet" href="{{asset('css/dashboard.css')}}" type="text/css">
+<link rel="stylesheet" href="{{asset('css/parallax/style.css')}}" type="text/css">
+<link rel="stylesheet" href="{{asset('css/slideshow/slideshow.css')}}" type="text/css">
+<script src="{{asset('js/slideshow.js')}}"></script>
+<script src="{{asset('js/scroll.js')}}"></script>
 <script>
     // initialize slideshow with first element
     $(document).ready(function () {
