@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+@extends('layouts.basePage')
 
 <html lang="en">
 
@@ -192,6 +192,3 @@
 </script>
 
 </body>
-
-</html>
-

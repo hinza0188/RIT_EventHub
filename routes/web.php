@@ -11,22 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Auth::routes();
 
-Route::get('/home', function() {
+Route::get('/', 'HomeController@index');
 
-   return view('home');
-});
+Route::get('/home', 'HomeController@index');
 
 Route::get('/account', function () {
     return view('account');
 });
 
-Route::get('/browse', function () {
-    return view('browse');
-});
+Route::get('/events', 'EventController@index');
+
+Route::get('/events/{event}', 'EventController@show');
 
 Route::get('/create', function () {
     return view('create');
