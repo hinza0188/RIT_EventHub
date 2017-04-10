@@ -16,3 +16,15 @@ Auth::routes();
 Route::get('/', 'HomeController@index');
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/account', function () {
+    return view('account');
+});
+
+Route::get('/browse', function () {
+    return view('browse');
+});
+
+Route::get('/create', function () {
+    return view('create');
+});

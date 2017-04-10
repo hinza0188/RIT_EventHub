@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 
 <!-- <Jay>: Not within my scope -->
@@ -14,6 +15,12 @@
                 <br>Bad :( you shouldn't be able to see this
             </div>
             @endif
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+            <h1> dashboard </h1>
+            <a href="browse"> browse events</a>
+            <a href="create"> create event </a>
+            <a href="account"> account </a>
         </div>
     </div>
 </div>
