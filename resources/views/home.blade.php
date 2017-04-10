@@ -1,5 +1,5 @@
 
-@extends('layouts.app')
+@extends('layouts.basePage')
 
 <!-- <Jay>: Not within my scope -->
 @section('content')
