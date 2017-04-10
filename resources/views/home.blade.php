@@ -1,7 +1,5 @@
-
 @extends('layouts.basePage')
 
-<!-- <Jay>: Not within my scope -->
 @section('content')
 <div class="container">
     <div class="row">
