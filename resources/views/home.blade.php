@@ -16,7 +16,7 @@
         </div>
         <div class="col-md-8 col-md-offset-2">
             <h1> dashboard </h1>
-            <a href="browse"> browse events</a>
+            <a href="events"> browse events</a>
             <a href="create"> create event </a>
             <a href="account"> account </a>
         </div>

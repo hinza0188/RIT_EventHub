@@ -13,13 +13,13 @@ class CreateEventTable extends Migration
      */
     public function up()
     {
-        Schema::create('event', function (Blueprint $table) {
+        Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('creator_id');
             $table->string('title');
             $table->longText('description');
             $table->string('location');
-            $table->dateTime('date');
+            //$table->dateTime('date');
 
             $table->timestamps();
         });
