@@ -9,6 +9,13 @@
 
 <body>
 <h1> browse all events</h1>
+
+    <ul>
+    @foreach ($events as $event)
+        <li> {{ $event }} </li>
+    @endforeach
+    </ul>
+
 </body>
 
 </html>
