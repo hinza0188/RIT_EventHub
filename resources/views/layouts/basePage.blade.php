@@ -64,9 +64,6 @@
                 background: #403f3f;
             }
 
-            h1 {
-                color: white;
-            }
 
             /* Logo */
             #logo { 
