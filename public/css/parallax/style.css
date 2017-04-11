@@ -49,6 +49,7 @@ section.module.parallax h1 {
   text-shadow: 0 0 10px white;
 }
 section.module.banner {
+  margin-top: 168px;
   background-image: url(../../images/GV_banner.jpg);
   background-repeat: no-repeat;
   background-position: center;

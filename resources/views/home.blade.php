@@ -153,23 +153,25 @@
             <div class="upcoming-slides fade">
 
                 <div class="content-container">
-                    <h2>slide one</h2>
+                    <h2 style="background: blue">slide one</h2>
                 </div>
 
             </div>
 
 
             <div class="upcoming-slides fade">
+
                 <div class="content-container">
-                    <h2>slide two</h2>
+                    <h2 style="background: blue">slide two</h2>
                 </div>
 
             </div>
 
 
             <div class="upcoming-slides fade">
+
                 <div class="content-container">
-                    <h2>slide three</h2>
+                    <h2 style="background: blue">slide three</h2>
                 </div>
 
             </div>
@@ -222,13 +224,9 @@
 <link rel="stylesheet" href="{{asset('css/slideshow/slideshow.css')}}" type="text/css">
 <script src="{{asset('js/slideshow.js')}}"></script>
 <script src="{{asset('js/scroll.js')}}"></script>
+
 <script>
-    // initialize slideshow with first element
-    $(document).ready(function () {
-       currentSlide(1);
-    });
-
-
+    // load parallax javascript
     loadParallaxEffect();
 </script>
 
