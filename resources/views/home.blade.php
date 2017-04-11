@@ -1,5 +1,35 @@
 @extends('layouts.basePage')
 
+@section('css')
+    <link rel="stylesheet" href="{{asset('css/dashboard.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('css/parallax/style.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('css/slideshow/slideshow.css')}}" type="text/css">
+@endsection
+
+@section('js')
+    <script src="{{asset('js/slideshow.js')}}"></script>
+    <script src="{{asset('js/scroll.js')}}"></script>
+    <script>
+        // initialize slide show with first element
+        $(document).ready(function () {
+            currentSlide(1);
+        });
+        loadParallaxEffect();
+    </script>
+    <script>
+        // This script will keep the footer always at the bottom of the page
+        $(document).ready(function () {
+            var docHeight = $(window).height();
+            var footerHeight = $('#footer').height();
+            var footerTop = $('#footer').position().top + footerHeight;
+
+            if (footerTop < docHeight) {
+                $('#footer').css('margin-top', 10+ (docHeight - footerTop) + 'px');
+            }
+        });
+    </script>
+@endsection
+
 @section('content')
 
 <section id="banner" class="module parallax banner black" style="opacity: 1">
@@ -53,7 +83,7 @@
         <div class="slideshow-container">
 
 
-            <div class="mySlides fade">
+            <div class="trending-slides fade">
 
                 {{-- Begin Trending Element HTML--}}
                 <div class="content-container">
@@ -114,25 +144,26 @@
             </div>
 
 
-            <div class="mySlides fade">
-                <img src="img2.jpg" style="width:100%">
+            <div class="trending-slides fade">
+
             </div>
 
 
-            <div class="mySlides fade">
-                <img src="img3.jpg" style="width:100%">
+            <div class="trending-slides fade">
+
             </div>
 
 
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <a class="prev" onclick="trending.plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="trending.plusSlides(1)">&#10095;</a>
         </div>
+
         <br>
 
         <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="trending.currentSlide(1)"></span>
+            <span class="dot" onclick="trending.currentSlide(2)"></span>
+            <span class="dot" onclick="trending.currentSlide(3)"></span>
         </div>
         {{-- End Slideshow --}}
 
@@ -141,43 +172,78 @@
 
     </section>
 
-    <section class="module content lightblue">
-        <div class="content-container">
-
-
-            <h2>Upcoming</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil consequuntur, nesciunt dicta, esse rem ducimus itaque quis. Adipisci ullam nam qui illum debitis sit ad in delectus, repudiandae non dolorum! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit veritatis, facere aliquid itaque tempore consequatur nihil sint enim aliquam id saepe magnam totam repellat placeat a fugit nulla molestias voluptas.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta cum distinctio eum asperiores rem enim fugit eaque voluptas est laboriosam in repudiandae architecto placeat, illum atque quasi explicabo, culpa, molestias!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit voluptas, aperiam quae provident, recusandae rem quis. Ut quaerat, quasi iste voluptate et dolorem atque sed neque voluptates, molestias dolor enim!</p>
-
+    <section class="module content white">
+        <div class="content-container" style="padding-bottom: 0px;">
+            <h2 style="margin-bottom: 0px;">Upcoming</h2>
         </div>
+        {{-- Begin Slideshow --}}
+        <div class="slideshow-container">
+
+
+            <div class="upcoming-slides fade">
+
+                <div class="content-container">
+                    <h2 style="background: blue">slide one</h2>
+                </div>
+
+            </div>
+
+
+            <div class="upcoming-slides fade">
+
+                <div class="content-container">
+                    <h2 style="background: blue">slide two</h2>
+                </div>
+
+            </div>
+
+
+            <div class="upcoming-slides fade">
+
+                <div class="content-container">
+                    <h2 style="background: blue">slide three</h2>
+                </div>
+
+            </div>
+
+
+            <a class="prev" onclick="upcoming.plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="upcoming.plusSlides(1)">&#10095;</a>
+        </div>
+
+        <br>
+
+        {{-- End Slideshow --}}
     </section>
 
     <section class="module content white">
         <div class="content-container">
 
 
-            <h2>My Events</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil consequuntur, nesciunt dicta, esse rem ducimus itaque quis. Adipisci ullam nam qui illum debitis sit ad in delectus, repudiandae non dolorum! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit veritatis, facere aliquid itaque tempore consequatur nihil sint enim aliquam id saepe magnam totam repellat placeat a fugit nulla molestias voluptas.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta cum distinctio eum asperiores rem enim fugit eaque voluptas est laboriosam in repudiandae architecto placeat, illum atque quasi explicabo, culpa, molestias!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit voluptas, aperiam quae provident, recusandae rem quis. Ut quaerat, quasi iste voluptate et dolorem atque sed neque voluptates, molestias dolor enim!</p>
+                <h2>
+                    My Events
+                </h2>
+                <ul>
+                    <li>
+                       <input type="checkbox" name="owned"> Owned
+                    </li>
+                    <li>
+                        <input type="checkbox" name="joined"> Joined
+                    </li>
+                    <li>
+                        <input type="checkbox" name="interested"> Interested
+                    </li>
+                </ul>
+
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil consequuntur, nesciunt dicta, esse rem ducimus itaque quis. Adipisci ullam nam qui illum debitis sit ad in delectus, repudiandae non dolorum! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit veritatis, facere aliquid itaque tempore consequatur nihil sint enim aliquam id saepe magnam totam repellat placeat a fugit nulla molestias voluptas.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta cum distinctio eum asperiores rem enim fugit eaque voluptas est laboriosam in repudiandae architecto placeat, illum atque quasi explicabo, culpa, molestias!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit voluptas, aperiam quae provident, recusandae rem quis. Ut quaerat, quasi iste voluptate et dolorem atque sed neque voluptates, molestias dolor enim!</p>
+            </div>
+
 
         </div>
     </section>
 
 </main>
 
-@endsection
-
-@section('js')
-    <link rel="stylesheet" href="{{asset('css/dashboard.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{asset('css/parallax/style.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{asset('css/slideshow/slideshow.css')}}" type="text/css">
-    <script src="{{asset('js/slideshow.js')}}"></script>
-    <script src="{{asset('js/scroll.js')}}"></script>
-    <script>
-        // initialize slide show with first element
-        $(document).ready(function () {
-            currentSlide(1);
-        });
-        loadParallaxEffect();
-    </script>
 @endsection
