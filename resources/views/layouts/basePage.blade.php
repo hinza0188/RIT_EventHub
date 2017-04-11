@@ -1,208 +1,82 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.base')
 
-        <title>Home</title>
+<!-- Styles -->
+@section('css')
+<link rel="stylesheet" href="{{ URL::asset('css/basePage.css') }}">
+@endsection
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+@section('body')
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                margin: 0;
-                padding: 0;
-                /*overflow: hidden;*/
-                min-width: 600px
-            }
 
-            footer {
-                border-top: solid;
-                border-top-color: orange; 
-                position: absolute;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                padding: 1rem;
-                color: white;
-                background-color: black;
-                clear: left;
-                text-align: left;
-                font-size: 17px;
-            }
+    <div class="navbar navbar-invsere bg-inverse">
+        <div id="logo" class="container-fluid navbar-text">
+            <h1 class="float-left">
+                <a href="/">RIT EventHub</a>
+            </h1>
+            <div class="float-right">
+                Welcome, <a href="/account" style="color:#ef8d22">UserName</a>&nbsp;&nbsp;&nbsp;
+                <a href="{{ route('logout') }}"
+                   onclick="event.preventDefault();
+                   document.getElementById('logout-form').submit();"
+                   style="color:whitesmoke"
+                >
+                    Logout
+                </a>
 
-            #container-outer {
-                background-color: black;
-            }
-
-            header a {
-                padding: 1em;
-                color: white;
-                background-color: #403f3f;
-                clear: left;
-                text-align: center;
-            }
-
-            #header { 
-                width: 100%;
-                padding: 1em;
-                color: white;
-                background-color: #403f3f;
-                clear: left;
-                text-align: center;
-                margin:0; 
-                padding:0; 
-            }
-
-            #header-inner { 
-                margin:0 auto; 
-                padding:10px; 
-                width:970px;
-                background: #403f3f;
-            }
-
-            h1 {
-                color: white;
-            }
-
-            /* Logo */
-            #logo { 
-                padding:5px; 
-                width:auto; 
-                float:left;
-            }
-
-            #logo h1 a, h1 a:hover { 
-                color:white; 
-                text-decoration:none;
-            }
-
-            #logo h1 span { 
-                color:#d3d3f9;
-            }
-
-            #userNav { 
-                margin:0 auto; 
-                padding:0px 0 0; 
-                height:10px; 
-                float:right;
-            }
-
-            #userNav ul { 
-                list-style:none; 
-                padding:0; 
-                height:10px; 
-                float:right;
-            }
-
-            #userNav ul li { 
-                margin:0; 
-                padding:0 0 0 8px; 
-                float:right;
-            }
-            
-            #userNav ul li a { 
-                display:block; 
-                margin:0; 
-                padding:8px 20px; 
-                color:orange; 
-                text-decoration:none;
-            }
-
-            /* Add a black background color to the top navigation */
-            .topNav {
-                background-color: black;
-                overflow: hidden;
-                border-bottom: solid;
-                border-bottom-width: 7px;
-                border-bottom-color: #ef8d22;  
-            }
-
-            .topNav a {
-                float: left;
-                display: block;
-                color: #f2f2f2;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-                font-size: 17px;
-            }
-
-            /* Change the color of links on hover */
-            .topNav a:hover {
-                background-color: #ef8d22;
-                color: black;
-            }
-
-            /* Add a color to the active/current link */
-            .topNav a.active {
-                background-color: #4CAF50;
-                color: #ef8d22;
-            }
-
-            .searchBar {
-                float: right;
-                text-align: center;
-                padding: 14px 16px;
-            }
-
-            /* Clear both sides to assist with div alignment  */
-            .clr { 
-                clear:both; 
-                padding:0; 
-                margin:0; 
-                width:100%; 
-                font-size:0px; 
-                line-height:0px;
-            }
-
-        </style>
-    </head>
-    <body id="body">
-        <div class="content">
-            <div class="container">
-                <header id="header">
-                    <div id="header-inner">
-                        <div id="logo">
-                            <h1><a href="/">RIT EventHub</a></h1>
-                        </div>
-                        <div id="userNav">
-                            <ul>
-                            <li>Welcome, <a href="/account">Jimmy</a></li>
-                            <li>
-                                <a href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                                         document.getElementById('logout-form').submit();">
-                                    Logout
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    {{ csrf_field() }}
-                                </form>
-                            </li>
-                            </ul>
-                        </div>
-                        <div class="clr"></div>
-                    </div>
-                </header>
-            </div>
-
-            <div class="topNav" id="mainNav">
-                <a href="/" type="button">Home</a>
-                <a href="/browse" type="button">Browse</a>
-                <a href="/create" type="button">Create</a>
-                <a href="/account" type="button">Account</a>
-                <form class="searchBar" action="/browse.blade.php" method="get">
-                    <input type="text" name="searchContent" value="Search by name, tag, etc.">
-                    <input type="submit" name="submit" value="Search">
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
                 </form>
             </div>
-
-            @yield('content')
         </div>
-        <footer>@ WildForce 2017. All rights reserved</footer>
-    </body>
-</html>
+    </div>
+    <!-- Top Nav Bar -->
+    <nav id="topbar" class="navbar navbar-toggleable-md navbar-light bg-faded">
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+            <div class="col-lg-12">
+
+                <ul class="navbar-nav float-left">
+                    <!-- Home Button -->
+                    <li class="btn btn-nav-active nav-item">
+                        <a class="btn nav-link" href="/" style="color:whitesmoke">Home</a>
+                    </li>
+                    <!-- Browse Button -->
+                    <li class="btn btn-nav nav-item">
+                        <a class="btn nav-link" href="/browse"  style="color:whitesmoke">Browse Event</a>
+                    </li>
+                    <!-- Create Button -->
+                    <li class="btn btn-nav nav-item">
+                        <a class="nav-link" href="/create"  style="color:whitesmoke">Create Event</a>
+                    </li>
+                    <!-- Account Button -->
+                    <li class="btn btn-nav nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:whitesmoke">
+                            Account
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">Reset Password</a>
+                            <a class="dropdown-item" href="#">View Detail</a>
+                        </div>
+                    </li>
+                </ul>
+                <!-- Search Bar -->
+                <form class="form-inline my-2 float-right">
+                    <input class="form-control mr-lg-2" type="text" placeholder="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+
+            </div>
+
+        </div>
+    </nav>
+    <div class="container-fluid" style="background-color:#ef8d22; height:10px;"></div>
+
+    @yield('content')
+
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted">@ WildForce 2017. All rights reserved</span>
+        </div>
+    </footer>
+
+    @endsection

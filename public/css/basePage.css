@@ -1,0 +1,28 @@
+/* Logo */
+#logo{
+    width:100%;
+}
+
+#logo h1 a, h1 a:hover div a, div a:hover{
+    color:#ef8d22;
+    text-decoration:none;
+}
+
+#logo div {
+    color:whitesmoke;
+}
+
+#topbar{
+    background-color: black;
+    padding: 0;
+}
+
+.btn-nav {
+    background-color: black;
+    color:whitesmoke;
+}
+
+.btn-nav-active {
+    background-color: #ef8d22;
+    color:whitesmoke;
+}
