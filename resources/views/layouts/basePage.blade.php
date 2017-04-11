@@ -15,7 +15,7 @@
             html, body {
                 margin: 0;
                 padding: 0;
-                overflow: hidden;
+                /*overflow: hidden;*/
                 min-width: 600px
             }
 
@@ -163,32 +163,33 @@
     </head>
     <body id="body">
         <div class="content">
-        <div class="container">
-            <header id="header">
-                <div id="header-inner">
-                    <div id="logo">
-                        <h1><a href="/">RIT EventHub</a></h1>
-                    </div>
-                    <div id="userNav">
-                        <ul>
-                        <li>Welcome, <a href="/account">Jimmy</a></li>
-                        <li>
-                            <a href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                Logout
-                            </a>
+            <div class="container">
+                <header id="header">
+                    <div id="header-inner">
+                        <div id="logo">
+                            <h1><a href="/">RIT EventHub</a></h1>
+                        </div>
+                        <div id="userNav">
+                            <ul>
+                            <li>Welcome, <a href="/account">Jimmy</a></li>
+                            <li>
+                                <a href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                {{ csrf_field() }}
-                            </form>
-                        </li>
-                        </ul>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
+                            </ul>
+                        </div>
+                        <div class="clr"></div>
                     </div>
-                    <div class="clr"></div>
-                </div>
-            </header>
-        </div>
+                </header>
+            </div>
+
             <div class="topNav" id="mainNav">
                 <a href="/" type="button">Home</a>
                 <a href="/browse" type="button">Browse</a>
@@ -199,13 +200,9 @@
                     <input type="submit" name="submit" value="Search">
                 </form>
             </div>
+
             @yield('content')
-
-
-
-        <footer>@ WildForce 2017. All rights reserved</footer>
         </div>
-
-
+        <footer>@ WildForce 2017. All rights reserved</footer>
     </body>
 </html>
