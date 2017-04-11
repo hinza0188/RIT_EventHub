@@ -12,6 +12,32 @@ body{
     margin-left: 40px;
     margin-right: 40px;
 }
+.content-container .content{
+    padding: 15px;
+    background-color: #e2e0e0;
+    border-radius: 3px;
+}
+.content-container .content p {
+    margin-top: 0;
+}
+.content-container h2{
+    background: #f36e21;
+    color: white;
+    width: 200px;
+    text-align: center;
+    border-radius: 3px;
+    border: 1px solid black;
+    padding: 5px;
+}
+.content-container ul {
+    list-style-type: none;
+
+}
+.content-container ul li{
+    display: inline;
+    list-style-type: none;
+}
+
 
 
 .column-left{
@@ -24,11 +50,6 @@ body{
     float: left;
 }
 
-
-.banner-content{
-   /*position: relative;*/
-   /*bottom: 300px;*/
-}
 
 
 /*      Mission Statement css                */

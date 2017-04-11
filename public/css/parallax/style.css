@@ -33,7 +33,7 @@ section.module p:last-child {
   margin-bottom: 0;
 }
 section.module.content {
-  padding: 40px 0;
+  padding: 10px 0;
 }
 section.module.parallax {
   /*padding: 0 0;*/
@@ -49,6 +49,7 @@ section.module.parallax h1 {
   text-shadow: 0 0 10px white;
 }
 section.module.banner {
+  margin-top: 168px;
   background-image: url(../../images/GV_banner.jpg);
   background-repeat: no-repeat;
   background-position: center;
