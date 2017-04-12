@@ -218,7 +218,7 @@
 
                 <div class="topNav" id="mainNav">
                     <a href="/home.blade.php" type="button">Home</a>
-                    <a href="/browse.blade.php" type="button">Browse</a>
+                    <a href="/events" type="button">Browse</a>
                     <a href="/create.blade.php" type="button">Create</a>
                     <a href="/account.blade.php" type="button">Account</a>
                     <form class="searchBar" action="/browse.blade.php" method="get">
@@ -229,6 +229,7 @@
                 <div id="bar"></div>
 
             </div> {{-- end navigation  --}}
+
 
             @yield('content')
 
