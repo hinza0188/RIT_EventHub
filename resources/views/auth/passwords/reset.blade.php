@@ -1,4 +1,4 @@
-@extends('layouts.all_base')
+@extends('layouts.root')
 
 @section('base_css')
     <link href="/css/app.css" rel="stylesheet"> <!-- Using this causes error somehow -->

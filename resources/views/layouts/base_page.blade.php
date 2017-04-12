@@ -1,4 +1,4 @@
-@extends('layouts.all_base')
+@extends('layouts.root')
 @section('base_css')
     {{-- now all the css is in project/public/css/ directory --}}
     <link rel="stylesheet" href="{{ URL::asset('css/basepage.css') }}">
