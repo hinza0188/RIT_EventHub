@@ -71,18 +71,8 @@
         </div>
     </body>
 
-<script>
-    // This script will keep the footer always at the bottom of the page
-        $(document).ready(function () {
-            var docHeight = $(window).height();
-            var footerHeight = $('#footer').height();
-            var footerTop = $('#footer').position().top + footerHeight;
-
-            if (footerTop < docHeight) {
-                $('#footer').css('margin-top', 10+ (docHeight - footerTop) + 'px');
-            }
-        });
-</script>
+<!-- Scripts --> <!-- now all js is in project/public/js/basepage.css -->
+<script src="{{ asset('js/footer.js') }}}}"></script>
 </html>
 
 
