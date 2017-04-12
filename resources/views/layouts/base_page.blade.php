@@ -1,6 +1,6 @@
 @extends('layouts.all_base')
 @section('base_css')
-    {{--Styles : now the css is in project/public/css/basepage.css --}}
+    {{-- now all the css is in project/public/css/ directory --}}
     <link rel="stylesheet" href="{{ URL::asset('css/basepage.css') }}">
     @yield('css')
 @endsection
@@ -66,7 +66,7 @@
 @endsection
 
 @section('base_js')
-    {{-- Scripts : now all the script is in project/public/js/footer.js --}}
+    {{-- Now all the script is in project/public/js/ directory --}}
     <script src="{{ asset('js/jquery-3.2.0.min.js') }}"></script>
     @yield('js')
     <script src="{{ asset('js/footer.js') }}"></script>

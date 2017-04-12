@@ -17,13 +17,13 @@
         {{--<link href="/css/app.css" rel="stylesheet"> <!-- Using this causes error after login --> --}}
         @yield('base_css')
 
-        <!-- Scripts -->
-        <script>
-            window.Laravel = {!! json_encode([
-                'csrfToken' => csrf_token(),
-            ]) !!};
-        </script>
     </head>
     @yield('body')
+    <!-- Scripts -->
+    <script>
+        window.Laravel = {!! json_encode([
+                'csrfToken' => csrf_token(),
+            ]) !!};
+    </script>
     @yield('base_js')
 </html>
