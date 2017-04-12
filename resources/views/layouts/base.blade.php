@@ -1,4 +1,3 @@
-<!-- This is laravel's auto-generated layout file -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,8 +10,12 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
+    @yield('basePage_css')
 
     <!-- Scripts -->
     <script>
