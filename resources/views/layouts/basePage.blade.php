@@ -10,8 +10,8 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ URL::asset('css/basePage.css') }}">
+        <!-- Styles --> <!-- now all css is in project/public/css/basepage.css -->
+        <link rel="stylesheet" href="{{ URL::asset('css/basepage.css') }}">
     </head>
     <body id="body">
         <div class="content">
