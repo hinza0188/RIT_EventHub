@@ -21,9 +21,9 @@ Route::get('/account', function () {
     return view('account');
 });
 
-Route::get('/events', 'EventController@index');
+Route::get('/events', 'EventController@browseAll');
 
-Route::get('/events/{event}', 'EventController@show');
+Route::get('/events/{event}', 'EventController@eventMain');
 
 Route::get('/create', function () {
     return view('create');
