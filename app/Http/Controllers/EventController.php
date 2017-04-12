@@ -24,7 +24,6 @@ class EventController extends Controller
 
     public function store(){
         $event = Event::create(request()->all());
-        $event->creator_id = 1;
         return redirect('/events/' . $event->id);
 
     }
