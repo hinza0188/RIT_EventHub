@@ -72,7 +72,7 @@
     </body>
 
 <!-- Scripts --> <!-- now all js is in project/public/js/basepage.css -->
-<script src="{{ asset('js/footer.js') }}}}"></script>
+<script src="{{ asset('js/footer.js') }}"></script>
 </html>
 
 
