@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Event;
+use Auth;
 
 use Illuminate\Http\Request;
 
