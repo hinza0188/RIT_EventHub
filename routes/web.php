@@ -25,6 +25,6 @@ Route::get('/events', 'EventController@browseAll');
 
 Route::get('/events/{event}', 'EventController@eventMain');
 
-Route::get('/create', function () {
-    return view('create');
-});
+Route::get('/create', 'EventController@create');
+
+Route::post('/create', 'EventController@store');

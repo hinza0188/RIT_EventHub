@@ -219,7 +219,7 @@
                 <div class="topNav" id="mainNav">
                     <a href="/home.blade.php" type="button">Home</a>
                     <a href="/events" type="button">Browse</a>
-                    <a href="/create.blade.php" type="button">Create</a>
+                    <a href="/create" type="button">Create</a>
                     <a href="/account.blade.php" type="button">Account</a>
                     <form class="searchBar" action="/browse.blade.php" method="get">
                         <input type="text" name="searchContent" value="Search by name, tag, etc.">
