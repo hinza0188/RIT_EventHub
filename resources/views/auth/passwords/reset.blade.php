@@ -1,6 +1,10 @@
-@extends('layouts.base')
+@extends('layouts.all_base')
 
-@section('content')
+@section('base_css')
+    <link href="/css/app.css" rel="stylesheet"> <!-- Using this causes error somehow -->
+@endsection
+
+@section('body')
 <div class="container">
     <div class="row" style="padding-top:15%">
         <div class="col-md-6 col-md-offset-3">

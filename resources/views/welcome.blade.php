@@ -1,4 +1,4 @@
-@extends('base.blade.php')
+@extends('layouts.all_base')
 
         <title>Laravel</title>
 

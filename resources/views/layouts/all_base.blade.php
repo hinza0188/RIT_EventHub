@@ -14,7 +14,7 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
-        <link href="/css/app.css" rel="stylesheet">
+        {{--<link href="/css/app.css" rel="stylesheet"> <!-- Using this causes error after login --> --}}
         @yield('base_css')
 
         <!-- Scripts -->

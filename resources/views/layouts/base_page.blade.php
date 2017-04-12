@@ -59,6 +59,8 @@
         {{-- end navigation  --}}
 
         @yield('content')
+
+        <div id="footer">@ WildForce 2017. All rights reserved</div>
     </div>
 </body>
 @endsection
