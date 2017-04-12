@@ -15,7 +15,6 @@
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
-    @yield('basePage_css')
 
     <!-- Scripts -->
     <script>
@@ -85,7 +84,5 @@
         @yield('content')
     </div>
 
-    <!-- Scripts -->
-    <script src="/js/app.js"></script>
 </body>
 </html>
