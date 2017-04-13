@@ -34,3 +34,6 @@ Route::get('/create', function () {
 Route::get('/test', function(){
     return view('test');
 });
+Route::get('/create', 'EventController@create');
+
+Route::post('/create', 'EventController@store');
