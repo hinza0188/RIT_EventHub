@@ -28,3 +28,9 @@ Route::get('/events/{event}', 'EventController@eventMain');
 Route::get('/create', function () {
     return view('create');
 });
+
+
+// test page
+Route::get('/test', function(){
+    return view('test');
+});
