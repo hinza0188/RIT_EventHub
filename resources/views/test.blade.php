@@ -47,7 +47,6 @@
             height: 240px;
             overflow: hidden;
             max-width: 850px;
-            float: left;
 
             /* css transitions */
             -webkit-transition: width 1s, height 1s; /* For Safari 3.1 to 6.0 */
