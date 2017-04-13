@@ -7,6 +7,38 @@
             margin-top: 365px;
         }
 
+        /*  Button css */
+
+        .event-page-button {
+            padding: 20px;
+            background: #ef8d22;
+            border-color: #ef8d22;
+            border-radius: 3px;
+            margin-top: 20px;
+        }
+
+        .join-button {
+            padding: 10px;
+            width: 30%;
+            margin-top: 10%;
+            background-color: #2ecc71;
+            border-radius: 3px;
+            border-color: #2ecc71;
+        }
+
+        .interested-button {
+            padding: 10px;
+            width: 30%;
+            margin-left: 10%;
+            margin-top: 10%;
+            background-color: #3498db;
+            border-color: #3498db;
+            border-radius: 3px;
+
+
+        }
+
+        /* event css */
 
         .event{
             border-radius: 3px;
@@ -14,6 +46,8 @@
             width: 300px;
             height: 240px;
             overflow: hidden;
+            max-width: 850px;
+            float: left;
 
             /* css transitions */
             -webkit-transition: width 1s, height 1s; /* For Safari 3.1 to 6.0 */
@@ -69,6 +103,7 @@
         .event .lg-container{
             padding: 10px;
             text-align: center;
+
         }
         .event .lg-container h3,h4,img,p {
             margin-top: 0;
@@ -80,7 +115,7 @@
         }
 
         .event .lg-container .column{
-            width: 50%;
+            width: 45%;
             float: left;
         }
         .event .lg-container .column.attending p{
@@ -103,38 +138,44 @@
 
         .lg-container hr{
             width: 80%;
+            margin-left: 13%;
         }
 
 
-        .lg-container .attendance {
-            font-size: 20pt;
+
+
+        .lg-container ul{
             text-align: left;
+            list-style-type: none;
+            width: 60%;
+            margin: auto;
+
         }
-        .lg-container .attendance img{
+        .lg-container .column h1 {
+            margin-bottom: 0;
+        }
+        .lg-container .column.info{
+            width: 55%;
+            margin: auto;
+        }
+        .lg-container .column.info img{
             float: left;
-            width: 40px;
+            margin-right: 10px;
         }
 
+        .lg-container .column .description {
 
-        .lg-container .location  {
-            font-size: 20pt;
-            text-align: left;
-        }
-        .lg-container .location img {
-            float: left;
-            width: 40px;
+            padding: 12%;
+            padding-top: 5%;
+            padding-bottom: 15px;
+            padding-right: 3%;
+            padding-left: 3%;
 
+            margin-left: 10%;
+            margin-right: 0;
+            margin-top: 0;
         }
 
-        .lg-container .time  {
-            font-size: 20pt;
-            text-align: left;
-        }
-        .lg-container .time img{
-            float: left;
-            width: 40px;
-
-        }
 
 
 
@@ -147,8 +188,9 @@
 
         .toggled {
             width: 80%;
-            height: 500px;
             margin: auto;
+            height: 450px;
+            max-width: 800px;
         }
 
         .toggled .sm-container {
@@ -159,13 +201,12 @@
         }
 
 
-
-
-
     </style>
 
     <div class="spacer"></div>
 
+
+    {{-- Begin Event --}}
     <div class="event">
         <div class="sm-container">
             <figure>
@@ -175,7 +216,7 @@
             <div class="info">
 
                 <div class="column" style="text-align: left;">
-                    <h3>Study Meeting</h3>
+                    <h3>HvZ Meeting</h3>
                     <h4>4/1/17</h4>
                 </div>
 
@@ -193,27 +234,45 @@
 
             <div class="column">
                 <figure></figure>{{--This figure elment holds the picture--}}
+                <button class="join-button" onclick="window.location = '' ">Join</button>
+                <button class="interested-button" onclick="window.location = '' ">Interested</button>
             </div>
 
 
             <div class="column info">
-                <h1>Study Meeting</h1>
+                <h1>HvZ Meeting</h1>
+                <hr>
 
-                <div class="attendance">
-                    <img class="icon" src="/images/temp/icons/person-icon.png">
-                    <h3>188/200</h3>
-                </div>
-                <div class="location">
-                    <img class="icon" src="/images/temp/icons/map-icon.png">
-                    <h3>NRH</h3>
-                </div>
-                <div class="time">
-                    <img class="icon" src="/images/temp/icons/clock-icon.png">
-                    <h3>
-                        04/03/2017
-                        08:00PM
-                    </h3>
-                </div>
+                <p class="description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Integer vestibulum lectus eget iaculis mattis. Curabitur tempus
+                    nisl est, at faucibus nisi viverra id. Cras id ex egestas, commodo
+                    ligula eu, venenatis neque. Aliquam erat volutpat. Vivamus erat ipsum,
+                    laoreet eu tristique mollis, luctus vitae tortor.
+                </p>
+
+                <ul>
+                    <li>
+                        <img class="icon" src="/images/temp/icons/person-icon.png">
+                        <h3>12/40</h3>
+                    </li>
+
+                    <li>
+                        <img class="icon" src="/images/temp/icons/map-icon.png">
+                        <h3>NRH</h3>
+                    </li>
+
+                    <li>
+                        <img class="icon" src="/images/temp/icons/clock-icon.png">
+                        <h3>
+                            04/03/2017
+                            08:00PM
+                        </h3>
+                    </li>
+                </ul>
+
+                <button class="event-page-button" onclick="window.location = '' "> View Event Page </button>
+
 
             </div>
 
@@ -222,6 +281,8 @@
         </div>
 
     </div>
+    {{-- End Event --}}
+
 
 
 
