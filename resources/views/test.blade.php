@@ -15,6 +15,7 @@
             border-color: #ef8d22;
             border-radius: 3px;
             margin-top: 20px;
+            cursor: pointer;
         }
 
         .join-button {
@@ -24,6 +25,7 @@
             background-color: #2ecc71;
             border-radius: 3px;
             border-color: #2ecc71;
+            cursor: pointer;
         }
 
         .interested-button {
@@ -34,7 +36,7 @@
             background-color: #3498db;
             border-color: #3498db;
             border-radius: 3px;
-
+            cursor: pointer;
 
         }
 
@@ -47,7 +49,7 @@
             height: 240px;
             overflow: hidden;
             max-width: 850px;
-
+            cursor: pointer;
             /* css transitions */
             -webkit-transition: width 1s, height 1s; /* For Safari 3.1 to 6.0 */
             transition: width 1s, height 1s;
