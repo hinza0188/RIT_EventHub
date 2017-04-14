@@ -37,7 +37,7 @@
             </div>
         </div>
 
-        <input style="display:none" name="user_id" value="{{Auth::id()}}">
+        <input style="display:none" name="user_id" value="{{Auth::id}}">
 
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
             <button type="submit" class="btn btn-primary">Submit</button>
