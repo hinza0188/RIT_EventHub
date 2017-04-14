@@ -14,8 +14,8 @@ $(function(){
 			$(this).css({'bottom':(p_width / n_aspcet - p_height) / 2});
 		}else{
         	$(this).width("auto")
-			$(this).height(p_height)
-			$(this).css({'right':(p_height * n_aspcet-p_width)/2}); 
+			$(this).height('222')
+			$(this).css({'right':0}); //(p_height * n_aspcet-p_width)/2}
 		}
     });
 });

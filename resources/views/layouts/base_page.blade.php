@@ -2,6 +2,7 @@
 @section('base_css')
     {{-- now all the css is in project/public/css/ directory --}}
     <link rel="stylesheet" href="{{ URL::asset('css/basepage.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/event.css') }}">
     @yield('css')
 @endsection
 
@@ -68,6 +69,13 @@
 @section('base_js')
     {{-- Now all the script is in project/public/js/ directory --}}
     <script src="{{ asset('js/jquery-3.2.0.min.js') }}"></script>
+    <script src="{{ asset('js/jquery-thumbnail-cut.js') }}"></script>
+
+    <script>
+        $('.event').click(function () {
+            $(this).toggleClass('toggled');
+        });
+    </script>
     @yield('js')
     <script src="{{ asset('js/footer.js') }}"></script>
 @endsection
