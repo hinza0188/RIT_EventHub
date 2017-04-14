@@ -4,15 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class phone_number extends Model
-{
+class phone_number extends Model {
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'area_code', 'middle_code', 'last_code'
+        'number',
     ];
 
     /**

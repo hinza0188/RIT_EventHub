@@ -33,7 +33,7 @@
                                     </form>
                                 </li>
                                 <li>
-                                    Welcome,<a href="/account">User::first_name</a>
+                                    Welcome,<a href="/account">{{Auth::user()->first_name}} {{Auth::user()->last_name}}</a>
                                 </li>
 
                             </ul>
@@ -47,7 +47,7 @@
                 <a href="/home" type="button">Home</a>
                 <a href="/events" type="button">Browse</a>
                 <a href="/create" type="button">Create</a>
-                <a href="/account" type="button">Account</a>
+                <a href="/account/{{Auth::id()}}" type="button">Account</a>
                 <form class="searchBar" action="/browse" method="get">
                     <input type="text" name="searchContent" value="Search by name, tag, etc.">
                     <input type="submit" name="submit" value="Search">

@@ -29,4 +29,5 @@ Route::get('/create', function () {
     return view('create');
 });
 
-Route::resource('/account', 'AccountController');
+Route::get('/account/{user_id}', 'AccountController@show');
+

@@ -27,10 +27,10 @@ class User extends Authenticatable {
     ];
 
     /**
-     * User may have one dedicated address
+     * User may have only one dedicated birthday
      */
-    public function get_address() {
-        return $this->hasOne(Address::class);
+    public function get_dob() {
+        return $this->hasOne(Dob::class);
     }
 
     /**
