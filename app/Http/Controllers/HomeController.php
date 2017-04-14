@@ -22,8 +22,6 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $user = user::find(1);
-        $address = $user->address;
-        return view('home', compact($user, $address));
+        return view('home');
     }
 }
