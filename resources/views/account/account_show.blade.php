@@ -18,10 +18,10 @@
                         {{Auth::user()->last_name}}
                     </div>
                     <div>
-                        {{Auth::user()->get_dob() or "Birthday have not been set"}}
+                        {{$dob}}
                     </div>
                     <div>
-                        {{Auth::user()->get_phone_number() or "Phone Number have not been set"}}
+                        {{$phone}}
                     </div>
                 </div>
             </div>
