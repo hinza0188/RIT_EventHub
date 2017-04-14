@@ -73,7 +73,9 @@
 
     <script>
         $('.event').click(function () {
-            $(this).toggleClass('toggled');
+
+            var event = $(this);
+            event.toggleClass('toggled');
         });
     </script>
     @yield('js')

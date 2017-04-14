@@ -4,6 +4,9 @@ html, body {
     /*overflow: hidden;*/
     min-width: 600px
 }
+.spacer{
+    margin-top: 165px;
+}
 
 
 #footer {

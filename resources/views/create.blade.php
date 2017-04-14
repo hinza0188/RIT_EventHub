@@ -2,7 +2,17 @@
 
 @section('content')
 
-    <div style="margin-top: 175px;">
+
+    <div class="spacer"></div>
+
+    <div class="form" style="margin-top: 200px;">
+        <h1>Create Event: </h1>
+        <hr>
+    </div>
+
+    <div class="form">
+
+
         <form method="POST" action="/create" enctype="multipart/form-data">
 
             {{ csrf_field() }}
@@ -28,17 +38,23 @@
                 <input type="file" id="imgURL" name="imgURL">
             </div>
 
+            <div id="submit-container">
+                <button type="submit" class="btn btn-default">Submit</button>
+            </div>
 
-            <button type="submit" class="btn btn-default">Submit</button>
+
         </form>
+
     </div>
 
 
-
+    <div style="margin-bottom: 100px;"></div>
 
     <script src="{{asset('js/jquery-3.2.0.min.js')}}"></script>
     <link rel="stylesheet" href="{{asset('css/parallax/style.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('css/slideshow/slideshow.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('css/event_form.css')}}" type="text/css">
+
     <script src="{{asset('js/slideshow.js')}}"></script>
     <script src="{{asset('js/scroll.js')}}"></script>
 
