@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Phone_number;
 use App\Dob;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 
 
 class DobController extends Controller {
@@ -25,11 +22,11 @@ class DobController extends Controller {
         return redirect()->route('account.index')->with('success','Phone Number created successfully');
     }
 
-    public function edit($user_id) {
+    public function edit($id) {
         return null;
     }
 
-    public function update(Request $request, $user_id) {
+    public function update(Request $request, $id) {
         return null;
     }
 
@@ -41,9 +38,8 @@ class DobController extends Controller {
      */
     public function destroy($id)
     {
-        Item::find($id)->delete();
-        return redirect()->route('itemCRUD.index')
-            ->with('success','Item deleted successfully');
+        Dob::find($id)->delete();
+        return redirect()->route('account.index')->with('success','Date of Birth deleted successfully');
     }
 
 }
