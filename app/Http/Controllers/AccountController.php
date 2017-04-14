@@ -42,7 +42,7 @@ class AccountController extends Controller {
             'new_password_2' => 'required',
         ]);
 
-        User::find(Auth::id())->update($request->all());
+        User::find($user_id)->update($request->all());
         return redirect()->route('account.index')
             ->with('success','Item updated successfully');
     }
