@@ -12,7 +12,7 @@
             Last Name: {{Auth::user()->last_name}}
         </div>
         <div>
-            Date of birth: @if($dob){{$dob[0]->date}} <a href="/account_dob/{{$dob[0]->id}}/edit">Edit</a>@else <a href="/account_dob/create"">Register Date of Birth</a> @endif
+            Date of birth: @if($dob){{$dob[0]->date}} <a href="/account_dob/{{$dob[0]->id}}/edit">Edit</a>@else <a href="/account_dob/create">Register Date of Birth</a> @endif
         </div>
         @if(sizeof($phones) > 0)
             @foreach($phones as $phone)
