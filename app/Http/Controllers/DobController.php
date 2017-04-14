@@ -19,7 +19,8 @@ class DobController extends Controller {
         ]);
 
         Dob::create($request->all());
-        return redirect()->route('account.index')->with('success','Phone Number created successfully');
+        return redirect()->route('account.index')
+            ->with('success','Date of Birth successfully registered');
     }
 
     public function show($id) {
@@ -39,7 +40,7 @@ class DobController extends Controller {
 
         Dob::find($id)->update($request->all());
         return redirect()->route('account.index')
-            ->with('success','Date of Birth updated successfully');
+            ->with('success','Date of Birth successfully updated');
     }
 
     /**
@@ -51,7 +52,8 @@ class DobController extends Controller {
     public function destroy($id)
     {
         Dob::find($id)->delete();
-        return redirect()->route('account.index')->with('success','Date of Birth deleted successfully');
+        return redirect()->route('account.index')
+            ->with('success','Date of Birth successfully deleted');
     }
 
 }
