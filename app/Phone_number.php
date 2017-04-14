@@ -11,7 +11,7 @@ class phone_number extends Model {
      * @var array
      */
     protected $fillable = [
-        'number',
+        'name', 'number',
     ];
 
     /**

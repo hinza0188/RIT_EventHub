@@ -20,7 +20,7 @@
                     @if(sizeof($phones) > 0)
                         @foreach($phones as $phone)
                         <div>
-                            Phone Number {{$loop->iteration}}: {{$phone->number}}
+                            Phone Number [ {{$phone->name}} ]: {{$phone->number}}
                         </div>
                         @endforeach
                     @else
