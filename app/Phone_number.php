@@ -11,16 +11,7 @@ class phone_number extends Model {
      * @var array
      */
     protected $fillable = [
-        'name', 'number',
-    ];
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'user_id',
+        'name', 'number', 'user_id',
     ];
 
     /**

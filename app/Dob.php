@@ -15,16 +15,7 @@ class dob extends Model {
      * @var array
      */
     protected $fillable = [
-        'date',
-    ];
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'user_id',
+        'date', 'user_id',
     ];
 
     /**

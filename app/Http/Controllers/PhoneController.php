@@ -12,7 +12,7 @@ class PhoneController extends Controller {
         return view('account.phone.create');
     }
 
-    public function store($request) {
+    public function store(Request $request) {
         $this->validate($request, [
             'name' => 'required',
             'number' => 'required',
