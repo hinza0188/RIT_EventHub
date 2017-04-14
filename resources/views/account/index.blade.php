@@ -23,8 +23,9 @@
             @foreach($phones as $phone)
             <div>
                 Phone Number [ {{$phone->name}} ]: {{$phone->number}}
-                <a href="account_phone/create"><i class="fa fa-plus-circle fa-fw" aria-hidden="true"></i></a>
-                <a href="/account_phone/{{$phone->id}}/edit"><i class="fa fa-fw fa-pencil-square-o" aria-hidden="true"></i></a>
+                <a href="{{ route( 'account_phone.create' ) }}"> <i class="fa fa-plus-circle fa-fw" aria-hidden="true"></i> </a>
+                <a href="{{ route( 'account_phone.edit', ['$id' =>$phone->id] ) }}"> <i class="fa fa-fw fa-pencil-square-o" aria-hidden="true"></i> </a>
+                <a href="{{ route( 'account_phone.destroy', ['$id' =>$phone->id] ) }}"> <i class="fa fa-fw fa-trash" aria-hidden="true"></i> </a>
             </div>
             @endforeach
         @else
