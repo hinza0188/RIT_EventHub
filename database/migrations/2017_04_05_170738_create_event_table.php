@@ -18,6 +18,7 @@ class CreateEventTable extends Migration
             $table->integer('creator_id');
             $table->string('title');
             $table->longText('description');
+            $table->string('imgURL');
             $table->string('location');
             //$table->dateTime('date');
 
