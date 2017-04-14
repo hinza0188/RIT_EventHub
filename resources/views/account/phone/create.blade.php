@@ -26,7 +26,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Name: </strong>
-                {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
+                {!! Form::select('name', ['Home' => 'Home', 'Mobile' => 'Mobile', 'Fax' => 'Fax'], 'Home') !!}
             </div>
         </div>
 
@@ -37,7 +37,7 @@
             </div>
         </div>
 
-        <input style="display:none" name="user_id" value="{{Auth::id}}">
+        <input style="display:none" name="user_id" value="{{Auth::id()}}">
 
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
             <button type="submit" class="btn btn-primary">Submit</button>
