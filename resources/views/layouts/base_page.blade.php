@@ -33,7 +33,7 @@
                                     </form>
                                 </li>
                                 <li>
-                                    Welcome,<a href="/account">{{ Auth::user()->first_name }}</a>
+                                    Welcome,<a href="/account">{{Auth::user()->first_name}} {{Auth::user()->last_name}}</a>
                                 </li>
 
                             </ul>

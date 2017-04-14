@@ -5,8 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
-{
+class User extends Authenticatable {
     use Notifiable;
 
     /**
@@ -26,4 +25,18 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * User may have only one dedicated birthday
+     */
+    public function get_dob() {
+        return $this->hasOne(Dob::class);
+    }
+
+    /**
+     * User may have many phone number
+     */
+    public function get_phone_number() {
+        return $this->hasMany(Phone_number::class);
+    }
 }

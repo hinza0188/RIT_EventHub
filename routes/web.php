@@ -29,6 +29,11 @@ Route::get('/create', function () {
     return view('create');
 });
 
+Route::resource('account', 'AccountController');
+
+Route::resource('account_phone', 'PhoneController');
+
+Route::resource('account_dob', 'DobController');
 
 // test page
 Route::get('/test', function(){
