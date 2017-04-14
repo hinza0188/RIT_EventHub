@@ -29,5 +29,8 @@ Route::get('/create', function () {
     return view('create');
 });
 
-Route::get('/account', 'AccountController@show');
+Route::resource('account', 'AccountController');
 
+Route::resource('account_phone', 'PhoneController');
+
+Route::resource('account_dob', 'DobController');
