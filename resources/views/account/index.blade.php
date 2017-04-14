@@ -15,12 +15,12 @@
                         Last Name: {{Auth::user()->last_name}}
                     </div>
                     <div>
-                        Date of birth: @if($dob){{$dob[0]->date}} <a class="btn" href="/account_dob/edit/{{$dob[0]->id}}">Edit</a>@else <a href="/account_dob/create" class="btn">Register Date of Birth</a> @endif
+                        Date of birth: @if($dob){{$dob[0]->date}} <a class="btn" href="/account_dob/edit/{{$dob[0]->id}}">Edit</a> <a class="btn" href="/account_dob/destroy/{{$dob[0]->id}}">Delete</a>@else <a href="/account_dob/create" class="btn">Register Date of Birth</a> @endif
                     </div>
                     @if(sizeof($phones) > 0)
                         @foreach($phones as $phone)
                         <div>
-                            Phone Number [ {{$phone->name}} ]: {{$phone->number}} <a class="btn" href="/account_phone/edit/{{$phone->id}}">Edit</a>
+                            Phone Number [ {{$phone->name}} ]: {{$phone->number}} <a class="btn" href="/account_phone/edit/{{$phone->id}}">Edit</a> <a class="btn" href="/account_phone/destroy/{{$phone->id}}">Delete</a>
                         </div>
                         @endforeach
                     @else
@@ -30,7 +30,12 @@
                     @endif
                 </div>
                 <div class="container">
-                    <a href="/account">Change Password</a>
+                    <div>
+                        <a href="/account">Reset Password</a>
+                    </div>
+                    <div>
+                        <a href="/account/edit">Edit Account</a>
+                    </div>
                 </div>
             </div>
         </div>

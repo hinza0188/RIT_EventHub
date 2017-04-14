@@ -22,12 +22,24 @@ class DobController extends Controller {
         return redirect()->route('account.index')->with('success','Phone Number created successfully');
     }
 
+    public function show($id) {
+        $dob = Dob::find($id);
+        return view('account.dob.edit', compact('dob'));
+    }
+
     public function edit($id) {
-        return null;
+        $dob = Dob::find($id);
+        return view('account.dob.edit', compact('dob'));
     }
 
     public function update(Request $request, $id) {
-        return null;
+        $this->validate($request, [
+            'date' => 'required',
+        ]);
+
+        Dob::find($id)->update($request->all());
+        return redirect()->route('account.index')
+            ->with('success','Date of Birth updated successfully');
     }
 
     /**
