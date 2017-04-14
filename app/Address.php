@@ -4,15 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Event extends Model
-{
+class address extends Model {
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-
+        'address_1', 'address_2', 'city', 'state', 'zip_code'
     ];
 
     /**
@@ -21,7 +21,14 @@ class Event extends Model
      * @var array
      */
     protected $hidden = [
-
+        'user_id',
     ];
 
+
+    /**
+     * Address has one dedicated user
+     */
+    public function get_user() {
+        return $this->hasOne(Address::class);
+    }
 }

@@ -14,7 +14,7 @@ class User extends Authenticatable {
      * @var array
      */
     protected $fillable = [
-        'first_name', 'last_name', 'email', 'password',
+        'first_name', 'last_name', 'email', 'password', 'phone_number'
     ];
 
     /**
@@ -25,4 +25,11 @@ class User extends Authenticatable {
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * User has one dedicated address
+     */
+    public function get_address() {
+        return $this->belongsTo(User::class);
+    }
 }
