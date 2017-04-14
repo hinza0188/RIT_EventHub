@@ -12,17 +12,17 @@ class AccountController extends Controller
 {
     public function get_user_info() {
         $users = User::all();
-        return;
+        return view('account.account_view', compact('users'));
     }
 
     public function edit_user_info() {
         $users = User::all();
-        return;
+        return view('account.account_edit', compact('users'));
     }
 
     public function delete_user() {
         $users = User::all();
-        return;
+        return view('account.account_delete', compact('users'));
     }
 
 
