@@ -12,19 +12,19 @@ class DobController extends Controller {
         return view('account.dob.create');
     }
 
-    public function store($request) {
+    public function store(Request $request) {
         $this->validate($request, [
             'date' => 'required',
             'user_id' => 'required',
         ]);
 
         Dob::create($request->all());
-        return redirect()->route('account.index')->with('success','Phone Number created successfully');
+        return redirect()->route('account.index')
+            ->with('success','Date of Birth successfully registered');
     }
 
-    public function show($id) {
-        $dob = Dob::find($id);
-        return view('account.dob.edit', compact('dob'));
+    public function show() {
+        return null;
     }
 
     public function edit($id) {
@@ -39,7 +39,7 @@ class DobController extends Controller {
 
         Dob::find($id)->update($request->all());
         return redirect()->route('account.index')
-            ->with('success','Date of Birth updated successfully');
+            ->with('success','Date of Birth successfully updated');
     }
 
     /**
@@ -51,7 +51,8 @@ class DobController extends Controller {
     public function destroy($id)
     {
         Dob::find($id)->delete();
-        return redirect()->route('account.index')->with('success','Date of Birth deleted successfully');
+        return redirect()->route('account.index')
+            ->with('success','Date of Birth successfully deleted');
     }
 
 }

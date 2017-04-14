@@ -15,19 +15,12 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index');
 
-Route::get('/home', 'HomeController@index');
+Route::resource('home', 'HomeController');
 
-Route::get('/account', function () {
-    return view('account');
-});
+// event pages
+Route::resource('event', 'EventController');
 
-Route::get('/events', 'EventController@browseAll');
-
-Route::get('/events/{event}', 'EventController@eventMain');
-
-Route::get('/create', function () {
-    return view('create');
-});
+// account pages
 
 Route::resource('account', 'AccountController');
 
