@@ -11,7 +11,7 @@ class Phone_numbersTableSeeder extends Seeder
      */
     public function run() {
         DB::table('phone_numbers')->insert([
-            'number'=> (integer)((string)(rand(100,999)).(string)(rand(100,999)).(string)(rand(1000,9999))),
+            'number'=> (string)(rand(100,999)).(string)(rand(100,999)).(string)(rand(1000,9999)),
             'user_id'=> 1
         ]);
 
