@@ -34,3 +34,11 @@ Route::resource('account', 'AccountController');
 Route::resource('account_phone', 'PhoneController');
 
 Route::resource('account_dob', 'DobController');
+
+// test page
+Route::get('/test', function(){
+    return view('test');
+});
+Route::get('/create', 'EventController@create');
+
+Route::post('/create', 'EventController@store');

@@ -7,6 +7,7 @@
     <body>
         <p> Description: {{ $event->description }} </p>
         <p> Location:  {{ $event->location }} </p>
+        <img src="{{ asset($event->imgURL) }}">
     </body>
     </div>
 
