@@ -33,7 +33,7 @@
                                     </form>
                                 </li>
                                 <li>
-                                    Welcome,<a href="/account">UserName</a>
+                                    Welcome,<a href="/account">{{$user->first_name}}</a>
                                 </li>
 
                             </ul>

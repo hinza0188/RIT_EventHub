@@ -4,15 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class address extends Model {
-
+class phone_number extends Model
+{
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'address_1', 'address_2', 'city', 'state', 'zip_code'
+        'area_code', 'middle_code', 'last_code'
     ];
 
     /**
@@ -24,11 +24,18 @@ class address extends Model {
         'user_id',
     ];
 
+    /**
+     * Entire phone number in string format
+     */
+    public function to_string() {
+        // '('.area_code.')'.middle_code.-.last_code
+        return null;
+    }
 
     /**
-     * Address has one dedicated user
-     */
+        * User has one dedicated address
+        */
     public function get_user() {
-        return $this->belongsTo(User::class);
+            return $this->hasOne(User::class);
     }
 }

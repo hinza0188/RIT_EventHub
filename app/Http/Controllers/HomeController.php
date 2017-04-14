@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -20,8 +21,9 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return view('home');
+    public function index() {
+        $user = user::find(1);
+        $address = $user->address;
+        return view('home', compact($user, $address));
     }
 }

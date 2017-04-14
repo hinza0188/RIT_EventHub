@@ -14,7 +14,7 @@ class User extends Authenticatable {
      * @var array
      */
     protected $fillable = [
-        'first_name', 'last_name', 'email', 'password', 'phone_number'
+        'first_name', 'last_name', 'email', 'password',
     ];
 
     /**
@@ -30,6 +30,13 @@ class User extends Authenticatable {
      * User has one dedicated address
      */
     public function get_address() {
-        return $this->belongsTo(User::class);
+        return $this->hasOne(Address::class);
+    }
+
+    /**
+     * User has one dedicated phone number
+     */
+    public function get_phone_number() {
+        return $this->hasOne(Phone_number::class);
     }
 }
