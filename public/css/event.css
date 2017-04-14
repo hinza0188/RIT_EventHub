@@ -1,0 +1,206 @@
+.spacer{
+    margin-top: 365px;
+}
+
+/*  Button css */
+
+.event-page-button {
+    padding: 20px;
+    background: #ef8d22;
+    border-color: #ef8d22;
+    border-radius: 3px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.join-button {
+    padding: 10px;
+    width: 30%;
+    margin-top: 10%;
+    background-color: #2ecc71;
+    border-radius: 3px;
+    border-color: #2ecc71;
+    cursor: pointer;
+}
+
+.interested-button {
+    padding: 10px;
+    width: 30%;
+    margin-left: 10%;
+    margin-top: 10%;
+    background-color: #3498db;
+    border-color: #3498db;
+    border-radius: 3px;
+    cursor: pointer;
+
+}
+
+/* event css */
+
+.event{
+    border-radius: 3px;
+    width: 300px;
+    height: 220px;
+    overflow: hidden;
+    max-width: 850px;
+    cursor: pointer;
+    /* css transitions */
+    -webkit-transition: width 1s, height 1s; /* For Safari 3.1 to 6.0 */
+    transition: width 1s, height 1s;
+
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+}
+.event:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+.event .sm-container{
+    padding: 10px;
+    text-align: center;
+}
+.event .sm-container h3,h4,p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.event .thumb {
+    background-color: #f1eded;
+    margin-bottom: 10px;
+}
+
+.event .sm-container .info {
+    margin-top: 5px;
+}
+
+.event .sm-container .info .column{
+    width: 50%;
+    float: left;
+}
+.event .sm-container .info .column.attending p{
+    float: right;
+}
+
+.event .sm-container .thumb-container{
+    border-radius: 3px;
+    background: #f1eded;
+    height:170px;
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 0;
+}
+
+
+.event .icon {
+    float: right;
+    width: 20px;
+}
+
+
+
+/* lg container css*/
+
+
+.event .lg-container{
+    padding: 10px;
+    text-align: center;
+
+}
+.event .lg-container h3,h4,p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.event .lg-container img {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+.event .lg-container .info {
+    margin-top: 5px;
+}
+
+.event .lg-container .column{
+    width: 45%;
+    float: left;
+}
+.event .lg-container .column.attending p{
+    float: right;
+}
+
+.event .lg-container figure{
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    background-position: center;
+    background-color: #f1eded;
+
+    border-radius: 3px;
+    margin: 0;
+    padding:0;
+}
+
+.lg-container hr{
+    width: 80%;
+    margin-left: 13%;
+}
+
+
+
+
+.lg-container ul{
+    text-align: left;
+    list-style-type: none;
+    width: 60%;
+    margin: auto;
+
+}
+.lg-container .column h1 {
+    margin-bottom: 0;
+}
+.lg-container .column.info{
+    width: 55%;
+    margin: auto;
+}
+.lg-container .column.info img{
+    float: left;
+    margin-right: 10px;
+}
+
+.lg-container .column .description {
+
+    padding: 12%;
+    padding-top: 5%;
+    padding-bottom: 15px;
+    padding-right: 3%;
+    padding-left: 3%;
+
+    margin-left: 10%;
+    margin-right: 0;
+    margin-top: 0;
+}
+
+
+
+
+
+/*   toggled css   */
+
+.lg-container {
+    display: none;
+}
+
+.toggled {
+    width: 80%;
+    margin: auto;
+    height: 450px;
+    max-width: 800px;
+}
+
+.toggled .sm-container {
+    display: none;
+}
+.toggled .lg-container {
+    display: block;
+}
