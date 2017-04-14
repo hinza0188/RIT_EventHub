@@ -23,9 +23,8 @@ class PhoneController extends Controller {
         return redirect()->route('account.index')->with('success','Phone Number created successfully');
     }
 
-    public function show($id) {
-        $phone = Phone_number::find($id);
-        return view('account.phone.edit', compact('phone'));
+    public function show() {
+        return null;
     }
 
     public function edit($id) {

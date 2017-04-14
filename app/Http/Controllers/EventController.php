@@ -10,18 +10,18 @@ use Illuminate\Http\UploadedFile;
 
 class EventController extends Controller
 {
-    public function browseAll(){
+    public function index(){
         $events = Event::all();
-        return view('browseAllEvents', compact('events'));
+        return view('event.browseAllEvents', compact('events'));
     }
 
-    public function eventMain($id){
+    public function show($id){
         $event = Event::find($id);
-        return view('eventMainPage', compact('event'));
+        return view('event.eventMainPage', compact('event'));
     }
 
     public function create(){
-        return view('create');
+        return view('event.create');
     }
 
     public function store(){
@@ -39,7 +39,7 @@ class EventController extends Controller
             $event->save();
         }
 
-        return redirect('/events/' . $event->id);
+        return redirect()->route('event.show', $event->id);
 
     }
 }

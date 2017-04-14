@@ -45,10 +45,10 @@
             </div>
 
             <div class="topNav" id="mainNav">
-                <a href="/home" type="button">Home</a>
-                <a href="/events" type="button">Browse</a>
-                <a href="/create" type="button">Create</a>
-                <a href="/account" type="button">Account</a>
+                <a href="{{ route('home.index') }}" type="button">Home</a>
+                <a href="{{ route('event.index') }}" type="button">Browse</a>
+                <a href="{{ route('event.create') }}" type="button">Create</a>
+                <a href="{{ route('account.index') }}" type="button">Account</a>
                 <form class="searchBar" action="/browse" method="get">
                     <input type="text" name="searchContent" value="Search by name, tag, etc.">
                     <input type="submit" name="submit" value="Search">

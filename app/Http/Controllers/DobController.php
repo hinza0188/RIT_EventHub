@@ -12,7 +12,7 @@ class DobController extends Controller {
         return view('account.dob.create');
     }
 
-    public function store($request) {
+    public function store(Request $request) {
         $this->validate($request, [
             'date' => 'required',
             'user_id' => 'required',
@@ -23,9 +23,8 @@ class DobController extends Controller {
             ->with('success','Date of Birth successfully registered');
     }
 
-    public function show($id) {
-        $dob = Dob::find($id);
-        return view('account.dob.edit', compact('dob'));
+    public function show() {
+        return null;
     }
 
     public function edit($id) {
