@@ -3,7 +3,7 @@
 @section('content')
 
     <div style="margin-top: 175px;">
-        <form method="POST" action="/create">
+        <form method="POST" action="/create" enctype="multipart/form-data">
 
             {{ csrf_field() }}
 
@@ -24,8 +24,8 @@
             </div>
 
             <div class="form-group">
-                <label for="image">Event Image</label>
-                <input type="file" id="image">
+                <label for="imgURL">Event Image</label>
+                <input type="file" id="imgURL" name="imgURL">
             </div>
 
 
