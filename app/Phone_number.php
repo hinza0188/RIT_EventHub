@@ -33,9 +33,9 @@ class phone_number extends Model
     }
 
     /**
-        * User has one dedicated address
-        */
+     * Phone number may have one dedicated User
+     */
     public function get_user() {
-            return $this->hasOne(User::class);
+            return $this->belongsTo(User::class);
     }
 }

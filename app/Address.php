@@ -26,7 +26,7 @@ class address extends Model {
 
 
     /**
-     * Address has one dedicated user
+     * Address may have one dedicated user
      */
     public function get_user() {
         return $this->belongsTo(User::class);

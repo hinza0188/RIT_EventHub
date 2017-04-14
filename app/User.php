@@ -27,16 +27,16 @@ class User extends Authenticatable {
     ];
 
     /**
-     * User has one dedicated address
+     * User may have one dedicated address
      */
     public function get_address() {
         return $this->hasOne(Address::class);
     }
 
     /**
-     * User has one dedicated phone number
+     * User may have many phone number
      */
     public function get_phone_number() {
-        return $this->hasOne(Phone_number::class);
+        return $this->hasMany(Phone_number::class);
     }
 }

@@ -28,3 +28,5 @@ Route::get('/events/{event}', 'EventController@eventMain');
 Route::get('/create', function () {
     return view('create');
 });
+
+Route::resource('/account', 'AccountController');
