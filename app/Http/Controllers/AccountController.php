@@ -23,13 +23,13 @@ class AccountController extends Controller {
             ->with(array('dob'=>$dob, 'phones'=>$phones));
     }
 
-    public function show() {
-        $user = User::find(Auth::id());
+    public function show($id) {
+        $user = User::find($id);
         return view('account.edit', compact('user'));
     }
 
-    public function edit() {
-        $user = User::find(Auth::id());
+    public function edit($id) {
+        $user = User::find($id);
         return view('account.edit', compact('user'));
     }
 

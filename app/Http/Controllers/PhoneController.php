@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Phone_number;
 use Illuminate\Http\Request;
-use SebastianBergmann\CodeCoverage\Report\PHP;
 
 
 class PhoneController extends Controller {
@@ -26,12 +25,12 @@ class PhoneController extends Controller {
 
     public function show($id) {
         $phone = Phone_number::find($id);
-        return view('account.dob.edit', compact('phone'));
+        return view('account.phone.edit', compact('phone'));
     }
 
     public function edit($id) {
         $phone = Phone_number::find($id);
-        return view('account.dob.edit', compact('phone'));
+        return view('account.phone.edit', compact('phone'));
     }
 
     public function update(Request $request, $id) {
