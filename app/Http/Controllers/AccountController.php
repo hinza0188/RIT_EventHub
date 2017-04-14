@@ -4,11 +4,6 @@ namespace App\Http\Controllers;
 
 use App\User;
 
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Contracts\Validation\Validator;
-use Illuminate\Support\Facades\Session;
 
 class AccountController extends Controller {
 
@@ -17,23 +12,19 @@ class AccountController extends Controller {
      *
      * @return view
      */
-    public function show($user_id) {
-        $user = User::find($user_id);
+    public function show() {
         return view('account.account_show');
     }
 
-    public function edit_user($user_id) {
-        $users = User::find($user_id);
+    public function edit_user() {
         return null;
     }
 
-    public function update_user($user_id) {
-        $users = User::find($user_id);
+    public function update_user() {
         return null;
     }
 
-    public function delete_user($user_id) {
-        $users = User::find($user_id);
+    public function delete_user() {
         return view('account.account_delete', compact('users'));
     }
 
