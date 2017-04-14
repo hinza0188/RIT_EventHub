@@ -21,12 +21,14 @@
         </div>
         @if(sizeof($phones) > 0)
             @foreach($phones as $phone)
-            <div>
-                Phone Number [ {{$phone->name}} ]: {{$phone->number}}
-                <a href="{{ route( 'account_phone.create' ) }}"> <i class="fa fa-plus-circle fa-fw" aria-hidden="true"></i> </a>
-                <a href="{{ route( 'account_phone.edit', ['$id' =>$phone->id] ) }}"> <i class="fa fa-fw fa-pencil-square-o" aria-hidden="true"></i> </a>
-                <a href="{{ route( 'account_phone.destroy', ['$id' =>$phone->id] ) }}"> <i class="fa fa-fw fa-trash" aria-hidden="true"></i> </a>
-            </div>
+            {!! Form::open([ 'method'  => 'delete', 'route' => [ 'account_phone.destroy', $phone->id ] ]) !!}
+                <div>
+                    Phone Number [ {{$phone->name}} ]: {{$phone->number}}
+                    <a href="{{ route( 'account_phone.create' ) }}"><i class="fa fa-plus-circle fa-fw" aria-hidden="true"></i></a>
+                    <a href="{{ route( 'account_phone.edit', ['$id' =>$phone->id] ) }}"><i class="fa fa-fw fa-pencil-square-o" aria-hidden="true"></i></a>
+                    {{ Form::submit('Delete', ['class' => 'btn btn-danger btn-sm']) }}
+                </div>
+            {{ Form::close() }}
             @endforeach
         @else
             <div>

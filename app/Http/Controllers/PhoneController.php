@@ -41,7 +41,7 @@ class PhoneController extends Controller {
 
         Phone_number::find($id)->update($request->all());
         return redirect()->route('account.index')
-            ->with('success','Date of Birth updated successfully');
+            ->with('success','Phone Number has been successfully updated');
     }
 
     /**
@@ -52,7 +52,8 @@ class PhoneController extends Controller {
      */
     public function destroy($id) {
         Phone_number::find($id)->delete();
-        return redirect()->route('account.index')->with('success','Phone number deleted successfully');
+        return redirect()->route('account.index')
+            ->with('success','Phone number has been successfully deleted');
     }
 
 }
