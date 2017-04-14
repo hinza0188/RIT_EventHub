@@ -17,7 +17,7 @@
                 <span><b>First Name:</b> {{Auth::user()->first_name}}</span>
             </div>
             <div>
-                <span><b>Last Name:</b> {{Auth::user()->last_name}}<span>
+                <span><b>Last Name:</b> {{Auth::user()->last_name}}</span>
             </div>
             <div>
                 Date of birth:
