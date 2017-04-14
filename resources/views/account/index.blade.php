@@ -12,17 +12,24 @@
             Last Name: {{Auth::user()->last_name}}
         </div>
         <div>
-            Date of birth: @if(sizeof($dob)>0){{$dob[0]->date}} <a href="/account_dob/{{$dob[0]->id}}/edit">Edit</a>@else <a href="/account_dob/create">Register Date of Birth</a> @endif
+            Date of birth:
+            @if(sizeof($dob)>0)
+                {{$dob[0]->date}} <a href="/account_dob/{{$dob[0]->id}}/edit"><i class="fa fa-fw fa-pencil-square-o" aria-hidden="true"></i></a>
+            @else
+                <a href="/account_dob/create"><i class="fa fa-fw fa-plus-circle" aria-hidden="true"></i></a>
+            @endif
         </div>
         @if(sizeof($phones) > 0)
             @foreach($phones as $phone)
             <div>
-                Phone Number [ {{$phone->name}} ]: {{$phone->number}} <a href="/account_phone/{{$phone->id}}/edit">Edit</a>
+                Phone Number [ {{$phone->name}} ]: {{$phone->number}}
+                <a href="account_phone/create"><i class="fa fa-plus-circle fa-fw" aria-hidden="true"></i></a>
+                <a href="/account_phone/{{$phone->id}}/edit"><i class="fa fa-fw fa-pencil-square-o" aria-hidden="true"></i></a>
             </div>
             @endforeach
         @else
             <div>
-                Phone Number: <a href="account_phone/create">Register Phone Number</a>
+                Phone Number: <a href="account_phone/create"><i class="fa fa-plus-circle fa-fw" aria-hidden="true"></i></a>
             </div>
         @endif
     </div>
