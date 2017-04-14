@@ -1,6 +1,9 @@
 @extends('layouts.base_page')
 
 @section('content')
+    <script src="{{ asset('js/jquery-3.2.0.min.js') }}"></script>
+
+
 
     <style>
         .spacer{
@@ -46,7 +49,7 @@
             border-radius: 3px;
             border: 5px solid green;
             width: 300px;
-            height: 240px;
+            height: 220px;
             overflow: hidden;
             max-width: 850px;
             cursor: pointer;
@@ -61,14 +64,14 @@
             padding: 10px;
             text-align: center;
         }
-        .event .sm-container h3,h4,img,p {
+        .event .sm-container h3,h4,p {
             margin-top: 0;
             margin-bottom: 0;
         }
 
-        .event .sm-container img {
-            max-height: 165px;
-            max-width: 200px;
+        .event .thumb {
+            background-color: #f1eded;
+            margin-bottom: 10px;
         }
 
         .event .sm-container .info {
@@ -83,13 +86,15 @@
             float: right;
         }
         
-        .event .sm-container figure{
+        .event .sm-container .thumb-container{
             border-radius: 3px;
             background: #f1eded;
-            width: 100%;
+            height:170px;
             margin: 0;
+            margin-bottom: 10px;
             padding: 0;
         }
+
 
         .event .icon {
             float: right;
@@ -106,11 +111,16 @@
             text-align: center;
 
         }
-        .event .lg-container h3,h4,img,p {
+        .event .lg-container h3,h4,p {
             margin-top: 0;
             margin-bottom: 0;
         }
+        .event .lg-container img {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
 
+        }
         .event .lg-container .info {
             margin-top: 5px;
         }
@@ -127,14 +137,12 @@
             width: 100%;
             max-width: 400px;
             height: 300px;
-            background:url("/images/temp/HvZ.jpg");
-            background-repeat: no-repeat;
             background-position: center;
-            background-color: #f1eded;;
+            background-color: #f1eded;
 
             border-radius: 3px;
             margin: 0;
-            padding: 20px;
+            padding:0;
         }
 
         .lg-container hr{
@@ -207,12 +215,16 @@
     <div class="spacer"></div>
 
 
+
+
+
     {{-- Begin Event --}}
     <div class="event">
         <div class="sm-container">
-            <figure>
-                <img src="/images/temp/HvZ.jpg" alt="picture">
-            </figure>
+
+                <div class="thumb" style="height: 150px; width: 100%;">
+                    <img  src="/images/GV_banner.jpg" alt="picture">
+                </div>{{--This figure elment holds the picture--}}
 
             <div class="info">
 
@@ -230,11 +242,12 @@
 
 
 
-
         <div class="lg-container">
 
             <div class="column">
-                <figure></figure>{{--This figure elment holds the picture--}}
+                <figure class="thumb">
+                    <img  src="/images/GV_banner.jpg" alt="picture">
+                </figure>{{--This figure elment holds the picture--}}
                 <button class="join-button" onclick="window.location = '' ">Join</button>
                 <button class="interested-button" onclick="window.location = '' ">Interested</button>
             </div>
@@ -286,8 +299,7 @@
 
 
 
-
-    <script src="{{asset('js/jquery-3.2.0.min.js')}}"></script>
+    <script src="{{ asset('js/jquery-thumbnail-cut.js') }}"></script>
 
     <script>
         $('.event').click(function () {
