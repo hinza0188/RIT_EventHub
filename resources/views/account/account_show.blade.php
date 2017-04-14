@@ -5,24 +5,29 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="container">
-                    this is account show page
-                </div>
-                <div class="container">
                     <div>
-                        {{Auth::user()->email}}
+                        RIT E-mail: {{Auth::user()->email}}
                     </div>
                     <div>
-                        {{Auth::user()->first_name}}
+                        First Name: {{Auth::user()->first_name}}
                     </div>
                     <div>
-                        {{Auth::user()->last_name}}
+                        Last Name: {{Auth::user()->last_name}}
                     </div>
                     <div>
-                        {{$dob}}
+                        Date of birth: @if($dob){{$dob}} @else N/A @endif
                     </div>
-                    <div>
-                        {{$phone}}
-                    </div>
+                    @if(sizeof($phones) > 0)
+                        @foreach($phones as $phone)
+                        <div>
+                            Phone Number {{$loop->iteration}}: {{$phone->number}}
+                        </div>
+                        @endforeach
+                    @else
+                        <div>
+                            Phone Number: N/A
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>

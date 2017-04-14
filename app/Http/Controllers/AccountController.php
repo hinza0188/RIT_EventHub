@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -15,8 +16,9 @@ class AccountController extends Controller {
     public function show() {
         $uid = Auth::id();
         $dob = DB::table('dobs')->where('user_id',$uid)->value('date');
-        $phone = DB::table('phone_numbers')->where('user_id',$uid)->value('number');
-        return view('account.account_show')->with(array('dob'=>$dob, 'phone'=>$phone));
+        $phones = DB::table('phone_numbers')->where('user_id',$uid)->get();
+
+        return view('account.account_show')->with(array('dob'=>$dob, 'phones'=>$phones));
     }
 
     public function edit_user() {

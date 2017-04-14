@@ -15,7 +15,7 @@ class CreateDobsTable extends Migration
         Schema::create('dobs', function (Blueprint $table) {
             $table->increments('id');
             $table->date('date');
-            $table->integer('user_id');
+            $table->integer('user_id')->unique();
             $table->timestamps();
         });
     }
