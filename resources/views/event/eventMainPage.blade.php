@@ -10,8 +10,8 @@
             <p> Date: {{ $event->date }}</p>
             <img src="{{ asset($event->imgURL) }}">
             <div>
-                <button class="join-button" onclick="window.location = '/event/{{$event->id}}/join/{{Auth::user()->id}}' ">Join</button>
-                <button class="interested-button" onclick="window.location = '/event/{{$event->id}}/interested/{{Auth::user()->id}}' ">Interested</button>
+                <button class="join-button" onclick="window.location = '/event/{{$event->id}}/{{Auth::user()->id}}/join' ">Join</button>
+                <button class="interested-button" onclick="window.location = '/event/{{$event->id}}/{{Auth::user()->id}}/interested' ">Interested</button>
             </div>
         </body>
     </div>

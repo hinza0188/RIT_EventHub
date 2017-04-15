@@ -9,7 +9,7 @@ class Event extends Model
 {
     //
     protected $fillable = [
-        'title', 'description', 'location', 'imgURL', 'date', 'interested', 'joined'
+        'title', 'description', 'location', 'imgURL', 'date',
     ];
 
     public function save(array $options = array())

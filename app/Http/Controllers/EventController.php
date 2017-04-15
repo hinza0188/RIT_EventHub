@@ -43,14 +43,11 @@ class EventController extends Controller {
 
         foreach ($user->get_events() as $event_u) {
             if ($event===$event_u){
-                $event->decrement('interested');
                 $user->get_events()->detach($event);
                 return redirect()->route('event.show', ['$id'=>'$eid']);
             }
         }
 
-//        $event->increment('interested');
-        DB::table('events')->increment('interested');
         $user->get_events()->attach($eid);
         return redirect()->route('event.show', ['$id'=>'$eid']);
     }
@@ -62,13 +59,11 @@ class EventController extends Controller {
 
         foreach ($event->get_users() as $user_e) {
             if ($user===$user_e){
-                $event->decrement('interested');
                 $event->get_users()->detach($event);
                 return redirect()->route('event.show', ['$id'=>'$eid']);
             }
         }
 
-        $event->increment('interested');
         $event->get_users()->attach($event);
         return redirect()->route('event.show', ['$id'=>'$eid']);
     }
