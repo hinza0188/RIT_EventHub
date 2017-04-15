@@ -39,3 +39,5 @@ Route::get('/test', function(){
 Route::get('/create', 'EventController@create');
 
 Route::post('/create', 'EventController@store');
+
+Route::resource('queries', 'QueryController');

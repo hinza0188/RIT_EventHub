@@ -49,10 +49,15 @@
                 <a href="{{ route('event.index') }}" type="button">Browse</a>
                 <a href="{{ route('event.create') }}" type="button">Create</a>
                 <a href="{{ route('account.index') }}" type="button">Account</a>
-                <form class="searchBar" action="/browse" method="get">
-                    <input type="text" name="searchContent" value="Search by name, tag, etc.">
-                    <input type="submit" name="submit" value="Search">
-                </form>
+
+                {!! Form::open(array('method' => 'get', 'route' => 'queries.index', 'class' => 'searchBar')) !!}
+                {!! Form::text('search', null,
+                                       array('required',
+                                            'class'=>'form-control',
+                                            'placeholder'=>'Search for an event...')) !!}
+                {!! Form::submit('Search',
+                                           array('class'=>'btn btn-default')) !!}
+                {!! Form::close() !!}
             </div>
             <div id="bar"></div>
 
