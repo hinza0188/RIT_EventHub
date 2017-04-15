@@ -50,6 +50,8 @@
                 <button type="submit" class="btn btn-default">Submit</button>
             </div>
 
+            <input style="display:none" name="interested" value="0">
+            <input style="display:none" name="joined" value="0">
 
         </form>
 

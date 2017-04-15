@@ -20,6 +20,10 @@ Route::resource('home', 'HomeController');
 // event pages
 Route::resource('event', 'EventController');
 
+Route::get('event/{{eid}}/join/{{uid}}', 'EventController@join');
+
+Route::get('event/{{eid}}/interested/{{uid}}', 'EventController@interested');
+
 // account pages
 
 Route::resource('account', 'AccountController');

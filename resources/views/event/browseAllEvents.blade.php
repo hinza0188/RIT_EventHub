@@ -25,7 +25,7 @@
 
                             <div class="column" style="text-align: left;">
                                 <h3>{{ $event->title }}</h3>                                            {{-- Event title--}}
-                                <h4>4/1/17</h4>                                                         {{-- Date --}}
+                                <h4>{{ $event->date }}</h4>                                                         {{-- Date --}}
                             </div>
 
                             <div class="column attending">
