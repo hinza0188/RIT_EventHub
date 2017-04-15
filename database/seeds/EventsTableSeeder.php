@@ -18,7 +18,7 @@ class EventsTableSeeder extends Seeder
                 'location'    => str_random(10),
                 'imgURL' => 'images/event_images/default.png',
                 'date' => date(Carbon::today()),
-                'creator_id' => (i),
+                'creator_id' => ($i),
             ));
         }
 
