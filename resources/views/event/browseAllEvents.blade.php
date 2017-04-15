@@ -1,5 +1,10 @@
 @extends('layouts.base_page')
 
+@section('css')
+    <link rel="stylesheet" href="{{asset('css/browseEvents.css')}}" type="text/css">
+@endsection
+
+
 @section('content')
 
     {{--<body onload="init();" onmousedown="collapse();">--}}
@@ -65,13 +70,12 @@
                                 <li>
                                     <img class="icon" src="/images/temp/icons/clock-icon.png">
                                     <h3>
-                                        04/03/2017                                                        {{-- Date --}}
-                                        08:00PM                                                           {{-- Time --}}
+                                        {{ $event->date }}                                                        {{-- Date --}}
                                     </h3>
                                 </li>
                             </ul>
 
-                            <button class="event-page-button" onclick="window.location = 'events/{{$event->id}}' "> View Event Page </button>
+                            <button class="event-page-button" onclick="window.location = '{{ route('event.show', ['$id'=>$event->id]) }}'"> View Event Page </button>
 
 
                         </div>
@@ -88,21 +92,5 @@
             @endforeach
 
     </div>
-
-
-
-    <script src="{{asset('js/jquery-3.2.0.min.js')}}"></script>
-    <link rel="stylesheet" href="{{asset('css/browseEvents.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{asset('css/parallax/style.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{asset('css/slideshow/slideshow.css')}}" type="text/css">
-
-    <script src="{{asset('js/slideshow.js')}}"></script>
-    <script src="{{asset('js/scroll.js')}}"></script>
-    <script src="{{asset('js/eventExpand.js')}}"></script>
-
-    <script>
-        // load parallax javascript
-        loadParallaxEffect();
-    </script>
 
 @endsection

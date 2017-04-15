@@ -3,10 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Event;
-use Auth;
-
-use Illuminate\Http\Request;
-use Illuminate\Http\UploadedFile;
 
 class EventController extends Controller
 {

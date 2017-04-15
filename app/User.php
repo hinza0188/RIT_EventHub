@@ -39,4 +39,8 @@ class User extends Authenticatable {
     public function get_phone_number() {
         return $this->hasMany(Phone_number::class);
     }
+
+    public function get_event() {
+        return $this->belongsTo(Event::class);
+    }
 }

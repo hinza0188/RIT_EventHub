@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEventTable extends Migration
+class CreateEventsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -20,7 +20,7 @@ class CreateEventTable extends Migration
             $table->longText('description');
             $table->string('imgURL');
             $table->string('location');
-            //$table->dateTime('date');
+            $table->date('date');
 
             $table->timestamps();
         });
@@ -35,4 +35,6 @@ class CreateEventTable extends Migration
     {
         Schema::dropIfExists('events');
     }
+
+
 }

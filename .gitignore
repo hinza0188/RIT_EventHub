@@ -19,3 +19,7 @@ Homestead.yaml
 
 # ignore composer's record
 composer.lock
+
+# ignore user uploading pictures
+/public/images/event_images/*.*
+!/public/images/event_images/default.png
