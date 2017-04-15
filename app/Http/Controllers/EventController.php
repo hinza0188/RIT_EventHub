@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Event;
 use App\User;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Request;
 
 class EventController extends Controller {
     public function index() {
