@@ -12,7 +12,7 @@ class DobsTableSeeder extends Seeder
      */
     public function run() {
         DB::table('dobs')->insert([
-            'date'=> Carbon::today(),
+            'date'=> date(Carbon::today()),
             'user_id'=>1,
         ]);
     }
