@@ -13,8 +13,8 @@ class EventsTableSeeder extends Seeder
     public function run() {
         for ($i=0; $i<100; $i++) {
             DB::table('events')->insert(array(
-                'title'=> 'Test Event',
-                'description'=> str_random(200),
+                'title'=> 'Test Event '.str_random(3),
+                'description'=> str_random(30),
                 'location'    => str_random(10),
                 'imgURL' => 'images/event_images/default.png',
                 'date' => date(Carbon::today()),

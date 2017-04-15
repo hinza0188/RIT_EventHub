@@ -5,6 +5,7 @@
 /*  Button css */
 
 .event-page-button {
+    color:white;
     padding: 20px;
     background: #ef8d22;
     border-color: #ef8d22;
@@ -14,6 +15,7 @@
 }
 
 .join-button {
+    color:white;
     padding: 10px;
     width: 30%;
     margin-top: 10%;
@@ -24,6 +26,7 @@
 }
 
 .interested-button {
+    color:white;
     padding: 10px;
     width: 30%;
     margin-left: 10%;
