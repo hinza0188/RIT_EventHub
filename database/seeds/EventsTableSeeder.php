@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 
 class EventsTableSeeder extends Seeder
 {
@@ -10,13 +11,16 @@ class EventsTableSeeder extends Seeder
      * @return void
      */
     public function run() {
-        DB::table('events')->insert(array(
-            'title'=> 'Test Event',
-            'description'=> str_random(200),
-            'location'    => str_random(10),
-            'imgURL' => 'images/event_images/1.png',
-            'date' => date(\Carbon\Carbon::now()),
-            'creator_id' => (1),
-        ));
+        for ($i=0; $i<100; $i++) {
+            DB::table('events')->insert(array(
+                'title'=> 'Test Event',
+                'description'=> str_random(200),
+                'location'    => str_random(10),
+                'imgURL' => 'images/event_images/default.png',
+                'date' => date(Carbon::today()),
+                'creator_id' => (i),
+            ));
+        }
+
     }
 }
