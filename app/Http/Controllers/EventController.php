@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Event;
 use App\User;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Request;
 
 class EventController extends Controller {
@@ -44,12 +45,13 @@ class EventController extends Controller {
             if ($event===$event_u){
                 $event->decrement('interested');
                 $user->get_events()->detach($event);
-                return Request::url();
+                return redirect()->route('event.show', ['$id'=>'$eid']);
             }
         }
 
-        $event->increment('interested');
-        $user->get_event()->attach($event);
+//        $event->increment('interested');
+        DB::table('events')->increment('interested');
+        $user->get_events()->attach($eid);
         return redirect()->route('event.show', ['$id'=>'$eid']);
     }
 
@@ -61,13 +63,13 @@ class EventController extends Controller {
         foreach ($event->get_users() as $user_e) {
             if ($user===$user_e){
                 $event->decrement('interested');
-                $user->get_events()->detach($event);
-                return Request::url();
+                $event->get_users()->detach($event);
+                return redirect()->route('event.show', ['$id'=>'$eid']);
             }
         }
 
         $event->increment('interested');
-        $user->get_event()->attach($event);
+        $event->get_users()->attach($event);
         return redirect()->route('event.show', ['$id'=>'$eid']);
     }
 

@@ -23,6 +23,6 @@ class Event extends Model
     }
 
     public function get_users() {
-        return $this->belongsToMany(User::class, 'event_joined_users', 'user_id', 'event_id');
+        return $this->belongsToMany(User::class, 'event_user', 'event_id', 'user_id');
     }
 }

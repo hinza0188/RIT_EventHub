@@ -43,8 +43,8 @@
                             <figure class="thumb">
                                 <img  src="{{ asset($event->imgURL) }}" alt="picture">               {{-- Event picture--}}
                             </figure>{{--This figure elment holds the picture--}}
-                            <button class="join-button" onclick="window.location = '' ">Join</button>
-                            <button class="interested-button" onclick="window.location = '' ">Interested</button>
+                            <button class="join-button" onclick="window.location = '/event/{{$event->id}}/{{Auth::user()->id}}/join' ">Join</button>
+                            <button class="interested-button" onclick="window.location = '/event/{{$event->id}}/{{Auth::user()->id}}/interested' ">Interested</button>
                         </div>
 
 
