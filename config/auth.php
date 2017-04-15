@@ -69,11 +69,18 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
+        'Collective\Html\Html\ServiceProvider',
 
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
+    ],
+
+    'aliases' => [
+      'Form' => 'Collective\Html\FormFacade',
+        'Html' => 'Collective\Html\HtmlFacade',
+
     ],
 
     /*
