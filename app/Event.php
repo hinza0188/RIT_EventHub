@@ -9,7 +9,7 @@ class Event extends Model
 {
     //
     protected $fillable = [
-        'title', 'description', 'location', 'imgURL', 'date'
+        'title', 'description', 'location', 'imgURL', 'date',
     ];
 
     public function save(array $options = array())
@@ -23,6 +23,6 @@ class Event extends Model
     }
 
     public function get_users() {
-        return $this->hasMany(User::class);
+        return $this->belongsToMany(User::class, 'event_user', 'event_id', 'user_id');
     }
 }

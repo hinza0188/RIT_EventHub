@@ -21,7 +21,6 @@ class CreateEventsTable extends Migration
             $table->string('imgURL');
             $table->string('location');
             $table->date('date');
-
             $table->timestamps();
         });
     }

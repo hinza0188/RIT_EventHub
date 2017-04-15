@@ -25,7 +25,7 @@
 
                             <div class="column" style="text-align: left;">
                                 <h3>{{ $event->title }}</h3>                                            {{-- Event title--}}
-                                <h4>4/1/17</h4>                                                         {{-- Date --}}
+                                <h4>{{ $event->date }}</h4>                                                         {{-- Date --}}
                             </div>
 
                             <div class="column attending">
@@ -43,8 +43,8 @@
                             <figure class="thumb">
                                 <img  src="{{ asset($event->imgURL) }}" alt="picture">               {{-- Event picture--}}
                             </figure>{{--This figure elment holds the picture--}}
-                            <button class="join-button" onclick="window.location = '' ">Join</button>
-                            <button class="interested-button" onclick="window.location = '' ">Interested</button>
+                            <button class="join-button" onclick="window.location = '/event/{{$event->id}}/{{Auth::user()->id}}/join' ">Join</button>
+                            <button class="interested-button" onclick="window.location = '/event/{{$event->id}}/{{Auth::user()->id}}/interested' ">Interested</button>
                         </div>
 
 
