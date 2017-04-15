@@ -64,7 +64,7 @@ class EventController extends Controller {
             }
         }
 
-        $event->get_users()->attach($event);
+        $event->get_users()->attach($uid);
         return redirect()->route('event.show', ['$id'=>'$eid']);
     }
 
