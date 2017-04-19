@@ -24,7 +24,7 @@
                 @if(sizeof($dob)>0)
                     {{$dob[0]->date}} <a href="/account_dob/{{$dob[0]->id}}/edit"><i class="fa fa-3x fa-fw fa-pencil-square-o" aria-hidden="true"></i></a>
                 @else
-                    <a href="/account_dob/create"><i class="fa fa-fw fa-plus-circle" aria-hidden="true"></i></a>
+                    <a href="/account_dob/create"><i class="fa fa-fw fa-3x fa-plus-circle" aria-hidden="true"></i></a>
                 @endif
             </div>
             @if(sizeof($phones) > 0)
