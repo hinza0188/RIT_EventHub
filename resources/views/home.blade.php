@@ -12,7 +12,7 @@
     <script src="{{asset('js/slideshow.js')}}"></script>
     <script src="{{asset('js/scroll.js')}}"></script>
     <script>
-        // load parallax javascript
+        // load parallax javascript asdf
         loadParallaxEffect();
     </script>
 @endsection

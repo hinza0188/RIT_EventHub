@@ -13,7 +13,7 @@
             @foreach ($events as $event)
 
 
-                {{-- Begin Event --}}
+                {{--  Begin Event  --}}
                 <div class="event">
                     <div class="sm-container">
 
