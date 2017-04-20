@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Event;
 use App\User;
+use DB;
+use Symfony\Component\Console\Output\ConsoleOutput;
 
 class EventController extends Controller {
     public function index() {
@@ -13,7 +15,30 @@ class EventController extends Controller {
 
     public function show($id) {
         $event = Event::find($id);
-        return view('event.eventMainPage', compact('event'));
+
+        // grab all the user id's who are attending this event
+        $query_result = DB::table('event_user')->where('event_id',$id)->get();
+
+        // holds the formatted names of all attendees
+        $attendees = [];
+
+        foreach ($query_result as $item){
+
+            // get attendee's first and last name
+            $first_name = User::find($item->user_id)->first_name;
+            $last_name = User::find($item->user_id)->last_name;
+
+            // format the first and last name
+            $username = "$first_name $last_name";
+
+            // add formatted name to array
+            array_push($attendees, $username );
+        }
+
+        // create dictionary to be passed to view
+        $dict = ['attendees'=>$attendees, 'event'=>$event];
+
+        return view('event.eventMainPage', $dict);
     }
 
     public function create() {
@@ -39,31 +64,34 @@ class EventController extends Controller {
         $user = User::find($uid);
         $event = Event::find($eid);
 
-        foreach ($user->get_events() as $event_u) {
-            if ($event===$event_u){
-                $user->get_events()->detach($event);
-                return redirect()->route('event.show', ['$id'=>'$eid']);
+        // grab all attendee's
+        $query_result = DB::table('event_user')->where('event_id',$eid)->get();
+
+        foreach ($query_result as $item){
+            if( $item->user_id == $uid){
+
             }
         }
 
-        $user->get_events()->attach($eid);
+
+
+//
+//        foreach ($user->get_events() as $event_u) {
+//            if ($event===$event_u){
+//                $user->get_events()->detach($event);
+//                return redirect()->route('event.show', ['$id'=>'$eid']);
+//            }
+//        }
+//
+//        $user->get_events()->attach($eid);
         return redirect()->route('event.show', ['$id'=>'$eid']);
     }
 
 
     public function join($eid, $uid) {
-        $user = User::find($uid);
         $event = Event::find($eid);
-
-        foreach ($event->get_users() as $user_e) {
-            if ($user===$user_e){
-                $event->get_users()->detach($event);
-                return redirect()->route('event.show', ['$id'=>'$eid']);
-            }
-        }
-
-        $event->get_users()->attach($uid);
-        return redirect()->route('event.show', ['$id'=>'$eid']);
+        $event->get_joined()->attach($uid);
+        return redirect()->route('event.show',['$id'=>$eid]);
     }
 
 }
