@@ -4,6 +4,8 @@
     <link rel="stylesheet" href="{{asset('css/dashboard.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('css/parallax/style.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('css/slideshow/slideshow.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('css/event.css')}}" type="text/css">
+
 @endsection
 
 @section('js')
@@ -220,9 +222,91 @@
                     </li>
                 </ul>
 
-            <div class="content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil consequuntur, nesciunt dicta, esse rem ducimus itaque quis. Adipisci ullam nam qui illum debitis sit ad in delectus, repudiandae non dolorum! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit veritatis, facere aliquid itaque tempore consequatur nihil sint enim aliquam id saepe magnam totam repellat placeat a fugit nulla molestias voluptas.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta cum distinctio eum asperiores rem enim fugit eaque voluptas est laboriosam in repudiandae architecto placeat, illum atque quasi explicabo, culpa, molestias!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit voluptas, aperiam quae provident, recusandae rem quis. Ut quaerat, quasi iste voluptate et dolorem atque sed neque voluptates, molestias dolor enim!</p>
+            <div class="content" style="overflow: hidden">
+
+                @foreach ($joined_events as $event)
+
+
+
+
+                        {{-- Begin Event --}}
+                        <div class="event">
+                            <div class="sm-container">
+
+                                <div class="thumb" style="height: 150px; width: 100%;">
+                                    <img  src="{{ asset($event->imgURL) }}" alt="picture">                   {{-- Event picture--}}
+                                </div>{{--This figure elment holds the picture--}}
+
+                                <div class="info">
+
+                                    <div class="column" style="text-align: left;">
+                                        <h3>{{ $event->title }}</h3>                                            {{-- Event title--}}
+                                        <h4>{{ $event->date }}</h4>                                                         {{-- Date --}}
+                                    </div>
+
+                                    <div class="column attending">
+                                        <p>12/40</p>                                                            {{-- Number of people attending--}}
+                                        <img src="/images/temp/icons/person-icon.png" alt="icon" class="icon">
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="lg-container">
+
+                                <div class="column">
+                                    <figure class="thumb">
+                                        <img  src="{{ asset($event->imgURL) }}" alt="picture">               {{-- Event picture--}}
+                                    </figure>{{--This figure elment holds the picture--}}
+                                    <button class="join-button" onclick="window.location = '/event/{{$event->id}}/{{Auth::user()->id}}/join' ">Join</button>
+                                    <button class="interested-button" onclick="window.location = '/event/{{$event->id}}/{{Auth::user()->id}}/interested' ">Interested</button>
+                                </div>
+
+
+                                <div class="column info">
+                                    <h1>{{ $event->title }}</h1>                                                {{-- Event title--}}
+                                    <hr>
+
+                                    <p class="description">
+                                        {{ $event->description }}                                               {{-- Event title--}}
+                                    </p>
+
+                                    <ul>
+                                        <li>
+                                            <img class="icon" src="/images/temp/icons/person-icon.png">
+                                            <h3>12/40</h3>                                                       {{-- Number of people attending--}}
+                                        </li>
+
+                                        <li>
+                                            <img class="icon" src="/images/temp/icons/map-icon.png">
+                                            <h3>{{ $event->location }}</h3>
+                                        </li>
+
+                                        <li>
+                                            <img class="icon" src="/images/temp/icons/clock-icon.png">
+                                            <h3>
+                                                {{ $event->date }}                                                        {{-- Date --}}
+                                            </h3>
+                                        </li>
+                                    </ul>
+
+                                    <button class="event-page-button" onclick="window.location = '{{ route('event.show', ['$id'=>$event->id]) }}'"> View Event Page </button>
+
+
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+                        {{-- End Event --}}
+
+
+
+
+                @endforeach
             </div>
 
 
