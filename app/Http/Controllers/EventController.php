@@ -44,7 +44,7 @@ class EventController extends Controller {
         $interested_query = DB::table('interested')->where('event_id',$id)->get();
 
 
-        // holds the formatted names of all attendees
+        // holds the formatted names of all interested users
         $interested_users = [];
 
         foreach ($interested_query as $item){
