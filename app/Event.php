@@ -25,4 +25,12 @@ class Event extends Model
     public function get_users() {
         return $this->belongsToMany(User::class, 'event_user', 'event_id', 'user_id');
     }
+
+    public function get_joined(){
+        return $this->belongsToMany('App\User');
+    }
+
+    public function get_interested(){
+        return $this->belongsToMany('App\User','interested');
+    }
 }
