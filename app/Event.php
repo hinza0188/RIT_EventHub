@@ -31,6 +31,6 @@ class Event extends Model
     }
 
     public function get_interested(){
-
+        return $this->belongsToMany('App\User','interested');
     }
 }

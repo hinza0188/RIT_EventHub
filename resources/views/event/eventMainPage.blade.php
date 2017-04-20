@@ -22,8 +22,8 @@
 
             <h3>Interested:</h3>
             <ul>
-                @foreach($attendees as $attendee)
-                    <li>{{$attendee}}</li>
+                @foreach($interested_users as $user)
+                    <li>{{$user}}</li>
                 @endforeach
             </ul>
 

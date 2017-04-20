@@ -16,27 +16,52 @@ class EventController extends Controller {
     public function show($id) {
         $event = Event::find($id);
 
+        //---------------  Load Attending users ---------------//
+
         // grab all the user id's who are attending this event
-        $query_result = DB::table('event_user')->where('event_id',$id)->get();
+        $attending_query = DB::table('event_user')->where('event_id',$id)->get();
 
         // holds the formatted names of all attendees
         $attendees = [];
 
-        foreach ($query_result as $item){
+        foreach ($attending_query as $item){
 
-            // get attendee's first and last name
-            $first_name = User::find($item->user_id)->first_name;
-            $last_name = User::find($item->user_id)->last_name;
+            // grab user object
+            $user = User::find($item->user_id);
 
             // format the first and last name
-            $username = "$first_name $last_name";
+            $username = "$user->first_name $user->last_name";
 
             // add formatted name to array
             array_push($attendees, $username );
         }
 
+
+
+        //---------------    Load Interested users ---------------//
+
+        // grab all people that are interested
+        $interested_query = DB::table('interested')->where('event_id',$id)->get();
+
+
+        // holds the formatted names of all attendees
+        $interested_users = [];
+
+        foreach ($interested_query as $item){
+
+            // grab user object
+            $user = User::find($item->user_id);
+
+            // format the first and last name
+            $username = "$user->first_name $user->last_name";
+
+            // add formatted name to array
+            array_push($interested_users, $username );
+        }
+
+
         // create dictionary to be passed to view
-        $dict = ['attendees'=>$attendees, 'event'=>$event];
+        $dict = ['attendees'=>$attendees, 'interested_users' => $interested_users ,'event'=>$event];
 
         return view('event.eventMainPage', $dict);
     }
@@ -61,36 +86,91 @@ class EventController extends Controller {
     }
 
     public function interested($eid, $uid) {
-        $user = User::find($uid);
         $event = Event::find($eid);
 
-        // grab all attendee's
-        $query_result = DB::table('event_user')->where('event_id',$eid)->get();
 
-        foreach ($query_result as $item){
+
+        //---------------  don't allow users to mark themselves as interested if they have already joined --------------- //
+
+
+        // grab all people that are interested
+        $attending_query = DB::table('event_user')->where('event_id',$eid)->get();
+
+        $is_attending = false;
+
+        // check to see if we are attending the event
+        foreach ($attending_query as $item){
             if( $item->user_id == $uid){
-
+                $is_attending = true;
+                break;
             }
         }
 
 
+        //---------------  prevent users from marking themselves interested more than once ---------------//
 
-//
-//        foreach ($user->get_events() as $event_u) {
-//            if ($event===$event_u){
-//                $user->get_events()->detach($event);
-//                return redirect()->route('event.show', ['$id'=>'$eid']);
-//            }
-//        }
-//
-//        $user->get_events()->attach($eid);
-        return redirect()->route('event.show', ['$id'=>'$eid']);
+        // grab all the user id's who are attending this event
+        $interested_query = DB::table('interested')->where('event_id',$eid)->get();
+
+        $is_interested = false;
+
+        // look for matching user id
+        foreach ($interested_query as $item){
+            if( $item->user_id == $uid){
+                $is_interested = true;
+                break;
+            }
+        }
+
+        // if we have not marked ourself as interested and we have not joined the event,
+        // mark ourself as interested
+        if(!$is_interested && !$is_attending){
+            $event->get_interested()->attach($uid);
+        }
+
+        return redirect()->route('event.show', ['$id'=>$eid]);
     }
 
 
     public function join($eid, $uid) {
         $event = Event::find($eid);
-        $event->get_joined()->attach($uid);
+
+        //---------------  remove users from interested list when they join --------------- //
+
+
+        // grab all people that are interested
+        $interested_query = DB::table('interested')->where('event_id',$eid)->get();
+
+        // remove yourself from interested table if you join the event
+        foreach ($interested_query as $item){
+            if( $item->user_id == $uid){
+                $event->get_interested()->detach($uid);
+                break;
+            }
+        }
+
+        //---------------  prevent users from joining more than once ---------------//
+
+        // grab all the user id's who are attending this event
+        $attending_query = DB::table('event_user')->where('event_id',$eid)->get();
+
+        $is_joined = false;
+
+        // look for matching user id
+        foreach ($attending_query as $item){
+            if( $item->user_id == $uid){
+                $is_joined = true;
+                break;
+            }
+        }
+
+        // if we have not joined, join the event
+        if(!$is_joined){
+            $event->get_joined()->attach($uid);
+        }
+
+
+
         return redirect()->route('event.show',['$id'=>$eid]);
     }
 
