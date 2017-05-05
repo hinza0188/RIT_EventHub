@@ -122,8 +122,8 @@ class EventController extends Controller {
             }
         }
 
-        // if we have not marked ourself as interested and we have not joined the event,
-        // mark ourself as interested
+        // if we have not marked ourselves as interested and we have not joined the event,
+        // mark ourselves as interested
         if(!$is_interested && !$is_attending){
             $event->get_interested()->attach($uid);
         }

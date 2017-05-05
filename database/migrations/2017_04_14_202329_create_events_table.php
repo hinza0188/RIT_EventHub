@@ -20,6 +20,7 @@ class CreateEventsTable extends Migration
             $table->longText('description');
             $table->string('imgURL');
             $table->string('location');
+            $table->integer('max');
             $table->date('date');
             $table->timestamps();
         });
