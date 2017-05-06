@@ -72,7 +72,7 @@
 
             <div class="trending-slides fade">
 
-                {{-- Begin Trending Element HTML--}}
+                {{-- Begin Trending Element 1 HTML--}}
                 <div class="content-container">
                     <h2>Trending</h2>
 
@@ -126,18 +126,126 @@
 
                     </div>
                 </div>
-                {{-- End Trending HTML--}}
+                {{-- End of Trending HTML 1--}}
 
             </div>
 
 
             <div class="trending-slides fade">
+                {{-- Begin Trending Element HTML 2--}}
+                <div class="content-container">
+                    <h2>Trending</h2>
 
+                    <div class="trending-container">
+
+                        <img class="trending-photo" src="../images/temp/OW_PS4_3P_SOLDIER76SMALL.png">
+
+                        <div class="content">
+
+
+                            <div class="column-left">
+                                <h1>OverWatch Survival</h1>
+                                <hr>
+                                <p class="description">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing
+                                    elit. Etiam maximus, mauris et mattis semper, mi
+                                    sem elementum nisi, id vulputate arcu lectus a lectus.
+                                    Ut tempor, eros sit amet placerat mattis, lectus sem interdum
+                                    lectus, non volutpat mi tellus vitae massa.
+                                </p>
+                            </div>
+
+                            <div class="column-right">
+
+
+                                <div class="attendance">
+                                    <img class="icon" src="../images/temp/icons/person-icon.png">
+                                    <h3>36/36</h3>
+                                </div>
+                                <div class="location">
+                                    <img class="icon" src="../images/temp/icons/map-icon.png">
+                                    <h3>Gollisano Gaming Lab</h3>
+                                </div>
+                                <div class="time">
+                                    <img class="icon" src="../images/temp/icons/clock-icon.png">
+                                    <h3>
+                                        06/19/2017
+                                        08:00PM
+                                    </h3>
+                                </div>
+
+                                <div class="buttons">
+                                    <button class="join">Join</button>
+                                    <button class="interested">Interested</button>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                {{-- End of Trending HTML 2--}}
             </div>
 
 
             <div class="trending-slides fade">
+                {{-- Begin Trending Element HTML 3--}}
+                <div class="content-container">
+                    <h2>Trending</h2>
 
+                    <div class="trending-container">
+
+                        <img class="trending-photo" src="../images/temp/images.jpeg">
+
+                        <div class="content">
+
+
+                            <div class="column-left">
+                                <h1>Valentines Showing</h1>
+                                <hr>
+                                <p class="description">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing
+                                    elit. Etiam maximus, mauris et mattis semper, mi
+                                    sem elementum nisi, id vulputate arcu lectus a lectus.
+                                    Ut tempor, eros sit amet placerat mattis, lectus sem interdum
+                                    lectus, non volutpat mi tellus vitae massa.
+                                </p>
+                            </div>
+
+                            <div class="column-right">
+
+
+                                <div class="attendance">
+                                    <img class="icon" src="../images/temp/icons/person-icon.png">
+                                    <h3>97/120</h3>
+                                </div>
+                                <div class="location">
+                                    <img class="icon" src="../images/temp/icons/map-icon.png">
+                                    <h3>Gosnell 8-1250</h3>
+                                </div>
+                                <div class="time">
+                                    <img class="icon" src="../images/temp/icons/clock-icon.png">
+                                    <h3>
+                                        02/09/2017
+                                        08:00PM
+                                    </h3>
+                                </div>
+
+                                <div class="buttons">
+                                    <button class="join">Join</button>
+                                    <button class="interested">Interested</button>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                {{-- End of Trending HTML 3--}}
             </div>
 
 
@@ -166,32 +274,76 @@
         {{-- Begin Slideshow --}}
         <div class="slideshow-container">
 
-
+            @foreach($upcoming as $item)
             <div class="upcoming-slides fade">
 
-                <div class="content-container">
-                    <h2 style="background: blue">slide one</h2>
+                <div class="content-container" style="overflow:hidden;">
+                    <div class="event">
+                        <div class="sm-container">
+
+                            <div class="thumb" style="height: 150px; width: 100%;">
+                                <img  src="{{ asset($item->imgURL) }}" alt="picture">                   {{-- Event picture--}}
+                            </div>{{--This figure elment holds the picture--}}
+
+                            <div class="info">
+
+                                <div class="column" style="text-align: left;">
+                                    <h3>{{ $item->title }}</h3>                                            {{-- Event title--}}
+                                    <h4>{{ $item->date }}</h4>                                                         {{-- Date --}}
+                                </div>
+
+                                <div class="column attending">
+                                    <p>12/40</p>                                                            {{-- Number of people attending--}}
+                                    <img src="/images/temp/icons/person-icon.png" alt="icon" class="icon">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lg-container">
+
+                            <div class="column">
+                                <figure class="thumb">
+                                    <img  src="{{ asset($item->imgURL) }}" alt="picture">               {{-- Event picture--}}
+                                </figure>{{--This figure elment holds the picture--}}
+                                <button class="join-button" onclick="window.location = '/event/{{$item->id}}/{{Auth::user()->id}}/join' ">Join</button>
+                                <button class="interested-button" onclick="window.location = '/event/{{$item->id}}/{{Auth::user()->id}}/interested' ">Interested</button>
+                            </div>
+
+
+                            <div class="column info">
+                                <h1>{{ $item->title }}</h1>                                                {{-- Event title--}}
+                                <hr>
+
+                                <p class="description">
+                                    {{ $item->description }}                                               {{-- Event title--}}
+                                </p>
+
+                                <ul>
+                                    <li>
+                                        <img class="icon" src="/images/temp/icons/person-icon.png">
+                                        <h3>12/40</h3>                                                       {{-- Number of people attending--}}
+                                    </li>
+
+                                    <li>
+                                        <img class="icon" src="/images/temp/icons/map-icon.png">
+                                        <h3>{{ $item->location }}</h3>
+                                    </li>
+
+                                    <li>
+                                        <img class="icon" src="/images/temp/icons/clock-icon.png">
+                                        <h3>
+                                            {{ $item->date }}                                                        {{-- Date --}}
+                                        </h3>
+                                    </li>
+                                </ul>
+
+                                <button class="event-page-button" onclick="window.location = '{{ route('event.show', ['$id'=>$item->id]) }}'"> View Event Page </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
             </div>
-
-
-            <div class="upcoming-slides fade">
-
-                <div class="content-container">
-                    <h2 style="background: blue">slide two</h2>
-                </div>
-
-            </div>
-
-
-            <div class="upcoming-slides fade">
-
-                <div class="content-container">
-                    <h2 style="background: blue">slide three</h2>
-                </div>
-
-            </div>
+            @endforeach
 
 
             <a class="prev" onclick="upcoming.plusSlides(-1)">&#10094;</a>
