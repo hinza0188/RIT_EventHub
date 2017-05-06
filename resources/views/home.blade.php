@@ -304,8 +304,6 @@
                         {{-- End Event --}}
 
 
-
-
                 @endforeach
             </div>
 

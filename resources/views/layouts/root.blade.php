@@ -14,6 +14,9 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
+        <!-- Plugins -->
+        <link href="{{asset('plugins/sweetalert2/sweetalert2.min.css')}}" rel="stylesheet" type="text/css">
+        <script src="{{ asset('plugins/sweetalert2/sweetalert2.min.js') }}" type="text/javascript"></script>
         <!-- Styles -->
         @yield('base_css')
 

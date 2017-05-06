@@ -15,6 +15,8 @@ class EventController extends Controller {
     public function show($id) {
         $event = Event::find($id);
 
+        $successfully_joined = session('successfully_joined');
+
         //---------------  Load Attending users ---------------//
 
         // grab all the user id's who are attending this event
@@ -60,7 +62,7 @@ class EventController extends Controller {
 
 
         // create dictionary to be passed to view
-        $dict = ['attendees'=>$attendees, 'interested_users' => $interested_users ,'event'=>$event];
+        $dict = ['attendees'=>$attendees, 'interested_users' => $interested_users ,'event'=>$event,'success' => $successfully_joined];
 
         return view('event.eventMainPage', $dict);
     }
@@ -165,14 +167,17 @@ class EventController extends Controller {
             }
         }
 
+        $successfully_joined = false;
+
         // if we have not joined, join the event
         if(!$is_joined){
             $event->get_joined()->attach($uid);
             $event->joined++;   // increment the number of attendee
             $event->save();     // and save it
+            $successfully_joined = true;
         }
 
-
+        session(['successfully_joined' => $successfully_joined]);
 
         return redirect()->route('event.show',['$id'=>$eid]);
     }
