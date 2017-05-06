@@ -44,8 +44,8 @@
                             <figure class="thumb">
                                 <img  src="{{ asset($event->imgURL) }}" alt="picture">               {{-- Event picture--}}
                             </figure>{{--This figure elment holds the picture--}}
-                            <button class="join-button" onclick="window.location = '/event/{{$event->id}}/{{Auth::user()->id}}/join' ">Join</button>
-                            <button class="interested-button" onclick="window.location = '/event/{{$event->id}}/{{Auth::user()->id}}/interested' ">Interested</button>
+                            <button class="join-button event-font btn-lg" onclick="window.location = '/event/{{$event->id}}/{{Auth::user()->id}}/join' "><i class="fa fa-sign-in" aria-hidden="true"></i> Join</button>
+                            <button class="interested-button event-font" onclick="window.location = '/event/{{$event->id}}/{{Auth::user()->id}}/interested' "><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Interested</button>
                         </div>
 
 
@@ -81,7 +81,7 @@
                                 </li>
                             </ul>
 
-                            <button class="event-page-button" onclick="window.location = '{{ route('event.show', ['$id'=>$event->id]) }}'"> View Event Page </button>
+                            <button class="event-page-button event-font" onclick="window.location = '{{ route('event.show', ['$id'=>$event->id]) }}'"><i class="fa fa-external-link-square" aria-hidden="true"></i> View Event Page </button>
 
 
                         </div>
