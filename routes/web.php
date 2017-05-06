@@ -20,6 +20,8 @@ Route::resource('home', 'HomeController');
 // event pages
 Route::resource('event', 'EventController');
 
+Route::get('/myEvents', 'EventController@myEvents');
+
 Route::get('event/{eid}/{uid}/join', 'EventController@join');
 
 Route::get('event/{eid}/{uid}/interested', 'EventController@interested');

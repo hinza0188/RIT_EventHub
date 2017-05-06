@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Symfony\Component\Console\Logger\ConsoleLogger;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
-use Symfony\Component\Console\Output\ConsoleOutput;
 use DB;
 use App\Event;
 
@@ -30,7 +28,6 @@ class HomeController extends Controller
         // grab all event id's that the user is attending
         $attending_query = DB::table('event_user')->where('user_id',$curr_id)->get();
 
-
         $joined_events = [];
         // query and add up all joined events
         foreach ($attending_query as $item){
@@ -38,7 +35,8 @@ class HomeController extends Controller
             array_unshift($joined_events,$current);
         }
 
-        return view('home',['joined_events'=>$joined_events]);
+        $upcoming = DB::table('events')->where('date', '>', Carbon::today())->limit(3)->orderBy('date', 'asc')->get();
+        return view('home',['joined_events'=>$joined_events, 'upcoming'=>$upcoming]);
     }
 
 }

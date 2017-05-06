@@ -20,18 +20,20 @@
                 <span><b>Last Name:</b> {{Auth::user()->last_name}}</span>
             </div>
             <div>
-                Date of birth:
-                @if(sizeof($dob)>0)
-                    {{$dob[0]->date}} <a href="/account_dob/{{$dob[0]->id}}/edit"><i class="fa fa-3x fa-fw fa-pencil-square-o" aria-hidden="true"></i></a>
-                @else
-                    <a href="/account_dob/create"><i class="fa fa-fw fa-3x fa-plus-circle" aria-hidden="true"></i></a>
-                @endif
+                <span class="dob">
+                    <b>Date of birth: </b>
+                    @if(sizeof($dob)>0)
+                        {{$dob[0]->date}} <a class="pull-right" href="/account_dob/{{$dob[0]->id}}/edit"><i class="fa fa-3x fa-fw fa-pencil-square-o" aria-hidden="true"></i></a>
+                    @else
+                        <a class="pull-right" href="/account_dob/create"><i class="fa fa-fw fa-3x fa-plus-circle" aria-hidden="true"></i></a>
+                    @endif
+                </span>
             </div>
             @if(sizeof($phones) > 0)
                 @foreach($phones as $phone)
                 {!! Form::open([ 'method'  => 'delete', 'route' => [ 'account_phone.destroy', $phone->id ] ]) !!}
                     <div>
-                        <span class="phone-number">Phone Number [ {{$phone->name}} ]: {{$phone->number}}</span>
+                        <span class="phone-number"><b>Phone Number [ {{$phone->name}} ]: </b>{{$phone->number}}</span>
                         <a href="{{ route( 'account_phone.create' ) }}"><i class="fa fa-3x fa-plus-circle fa-fw" aria-hidden="true"></i></a>
                         <a href="{{ route( 'account_phone.edit', ['$id' =>$phone->id] ) }}"><i class="fa fa-3x fa-fw fa-pencil-square-o" aria-hidden="true"></i></a>
                         {{ Form::submit('Delete', ['class' => 'delete-button']) }}

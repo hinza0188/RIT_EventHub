@@ -38,8 +38,8 @@
 
             <img src="{{ asset($event->imgURL) }}">
             <div>
-                <button class="join-button" onclick="window.location = '/event/{{$event->id}}/{{Auth::user()->id}}/join';">Join</button>
-                <button class="interested-button" onclick="window.location = '/event/{{$event->id}}/{{Auth::user()->id}}/interested' ">Interested</button>
+                <button style="font-size:1em;" class="join-button" onclick="window.location = '/event/{{$event->id}}/{{Auth::user()->id}}/join' "><i class="fa fa-sign-in" aria-hidden="true"></i> Join</button>
+                <button style="font-size:1em;" class="interested-button" onclick="window.location = '/event/{{$event->id}}/{{Auth::user()->id}}/interested' "><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Interested</button>
             </div>
         </body>
     </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Event;
 use App\User;
 use DB;
+use Auth;
 
 class EventController extends Controller {
     public function index() {
@@ -148,6 +149,8 @@ class EventController extends Controller {
         foreach ($interested_query as $item){
             if( $item->user_id == $uid){
                 $event->get_interested()->detach($uid);
+                $event->interested--;
+                $event->save();
                 break;
             }
         }
@@ -180,6 +183,39 @@ class EventController extends Controller {
         session(['successfully_joined' => $successfully_joined]);
 
         return redirect()->route('event.show',['$id'=>$eid]);
+    }
+
+    public function myEvents(){
+        $userID = Auth::user()->id;
+        $user = Auth::user();
+        $allevents = Event::all();
+
+        // add a user's created events to their events
+        $eventsCreated = Event::all()->where('creator_id', $userID);
+
+        // add a user's interested events to their events
+        $eventsInterested = [];
+        foreach ($allevents as $event){
+            $interested_query = DB::table('interested')->where('event_id',$event->id)->get();
+            foreach ($interested_query as $user_i){
+                if ($user_i = $user){
+                    array_push($eventsInterested, $event);
+                }
+            }
+        }
+
+        // add a user's joined events to their events
+        $eventsJoined = [];
+        foreach ($allevents as $event){
+            $joined_query = DB::table('event_user')->where('event_id',$event->id)->get();
+            foreach ($joined_query as $user_j){
+                if ($user_j = $user){
+                    array_push($eventsJoined, $event);
+                }
+            }
+        }
+
+        return view('event.myEvents', compact('eventsCreated', 'eventsInterested', 'eventsJoined'));
     }
 
 }

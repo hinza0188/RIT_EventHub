@@ -46,8 +46,9 @@
 
             <div class="topNav" id="mainNav">
                 <a href="{{ route('home.index') }}" type="button">Home</a>
-                <a href="{{ route('event.index') }}" type="button">Browse</a>
-                <a href="{{ route('event.create') }}" type="button">Create</a>
+                <a href="{{ route('event.index') }}" type="button">All Events</a>
+                <a href="/myEvents" type="button">My Events</a>
+                <a href="{{ route('event.create') }}" type="button">Create New</a>
                 <a href="{{ route('account.index') }}" type="button">Account</a>
 
                 {!! Form::open(array('method' => 'get', 'route' => 'queries.index', 'class' => 'searchBar')) !!}
