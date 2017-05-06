@@ -5,12 +5,30 @@
     @if($success)
         <script>
             swal(
+                'Success!',
+                'You just joined {{$event->title}}!',
+                'success'
+            )
+        </script>
+
+        <?php session(['successfully_joined' => false]); ?>
+
+    @endif
+
+
+    @if($created)
+
+        <script>
+            swal(
                     'Success!',
-                    'You just joined {{$event->title}}!',
+                    'You just created  {{$event->title}}!',
                     'success'
             )
         </script>
+        <?php session(['create_event_success' => false]); ?>
     @endif
+
+
     <div style="margin-top: 168.88px;">
         <h1> {{ $event->title }}</h1>
         <body>
