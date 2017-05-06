@@ -7,9 +7,10 @@ use Illuminate\Support\Facades\Auth;
 
 class Event extends Model
 {
-    //
+    // added extra filed (max), (joined), and (interested) that just stores number.
+    // Detailed data goes into many to many relationship tables
     protected $fillable = [
-        'title', 'description', 'location', 'imgURL', 'max', 'date',
+        'title', 'description', 'location', 'imgURL', 'max', 'joined', 'interested', 'date',
     ];
 
     public function save(array $options = array())

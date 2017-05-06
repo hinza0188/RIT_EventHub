@@ -22,6 +22,8 @@ class CreateEventsTable extends Migration
             $table->string('location');
             $table->integer('max');
             $table->date('date');
+            $table->integer('joined');
+            $table->integer('interested');
             $table->timestamps();
         });
     }
