@@ -72,7 +72,7 @@
 
             <div class="trending-slides fade">
 
-                {{-- Begin Trending Element HTML--}}
+                {{-- Begin Trending Element 1 HTML--}}
                 <div class="content-container">
                     <h2>Trending</h2>
 
@@ -126,18 +126,126 @@
 
                     </div>
                 </div>
-                {{-- End Trending HTML--}}
+                {{-- End of Trending HTML 1--}}
 
             </div>
 
 
             <div class="trending-slides fade">
+                {{-- Begin Trending Element HTML 2--}}
+                <div class="content-container">
+                    <h2>Trending</h2>
 
+                    <div class="trending-container">
+
+                        <img class="trending-photo" src="../images/temp/OW_PS4_3P_SOLDIER76SMALL.png">
+
+                        <div class="content">
+
+
+                            <div class="column-left">
+                                <h1>OverWatch Survival</h1>
+                                <hr>
+                                <p class="description">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing
+                                    elit. Etiam maximus, mauris et mattis semper, mi
+                                    sem elementum nisi, id vulputate arcu lectus a lectus.
+                                    Ut tempor, eros sit amet placerat mattis, lectus sem interdum
+                                    lectus, non volutpat mi tellus vitae massa.
+                                </p>
+                            </div>
+
+                            <div class="column-right">
+
+
+                                <div class="attendance">
+                                    <img class="icon" src="../images/temp/icons/person-icon.png">
+                                    <h3>36/36</h3>
+                                </div>
+                                <div class="location">
+                                    <img class="icon" src="../images/temp/icons/map-icon.png">
+                                    <h3>Gollisano Gaming Lab</h3>
+                                </div>
+                                <div class="time">
+                                    <img class="icon" src="../images/temp/icons/clock-icon.png">
+                                    <h3>
+                                        06/19/2017
+                                        08:00PM
+                                    </h3>
+                                </div>
+
+                                <div class="buttons">
+                                    <button class="join">Join</button>
+                                    <button class="interested">Interested</button>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                {{-- End of Trending HTML 2--}}
             </div>
 
 
             <div class="trending-slides fade">
+                {{-- Begin Trending Element HTML 3--}}
+                <div class="content-container">
+                    <h2>Trending</h2>
 
+                    <div class="trending-container">
+
+                        <img class="trending-photo" src="../images/temp/images.jpeg">
+
+                        <div class="content">
+
+
+                            <div class="column-left">
+                                <h1>Valentines Showing</h1>
+                                <hr>
+                                <p class="description">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing
+                                    elit. Etiam maximus, mauris et mattis semper, mi
+                                    sem elementum nisi, id vulputate arcu lectus a lectus.
+                                    Ut tempor, eros sit amet placerat mattis, lectus sem interdum
+                                    lectus, non volutpat mi tellus vitae massa.
+                                </p>
+                            </div>
+
+                            <div class="column-right">
+
+
+                                <div class="attendance">
+                                    <img class="icon" src="../images/temp/icons/person-icon.png">
+                                    <h3>97/120</h3>
+                                </div>
+                                <div class="location">
+                                    <img class="icon" src="../images/temp/icons/map-icon.png">
+                                    <h3>Gosnell 8-1250</h3>
+                                </div>
+                                <div class="time">
+                                    <img class="icon" src="../images/temp/icons/clock-icon.png">
+                                    <h3>
+                                        02/09/2017
+                                        08:00PM
+                                    </h3>
+                                </div>
+
+                                <div class="buttons">
+                                    <button class="join">Join</button>
+                                    <button class="interested">Interested</button>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                {{-- End of Trending HTML 3--}}
             </div>
 
 
