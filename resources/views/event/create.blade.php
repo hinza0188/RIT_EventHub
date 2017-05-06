@@ -47,7 +47,7 @@
             </div>
 
             <div class="form-group">
-                <label for="date">Date</label>
+                <label for="date">Date (yyyy-mm-dd)</label>
                 {!! Form::date('date', \Carbon\Carbon::now()) !!}
             </div>
 
