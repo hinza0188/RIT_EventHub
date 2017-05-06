@@ -467,8 +467,6 @@
                         {{-- End Event --}}
 
 
-
-
                 @endforeach
             </div>
 

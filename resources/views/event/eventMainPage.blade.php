@@ -2,6 +2,15 @@
 
 @section('content')
 
+    @if($success)
+        <script>
+            swal(
+                    'Success!',
+                    'You just joined {{$event->title}}!',
+                    'success'
+            )
+        </script>
+    @endif
     <div style="margin-top: 168.88px;">
         <h1> {{ $event->title }}</h1>
         <body>
