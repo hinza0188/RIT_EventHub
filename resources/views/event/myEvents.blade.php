@@ -65,7 +65,7 @@
                             </li>
 
                             <li>
-                                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                                <img class="icon" src="/images/temp/icons/thumbs_up.png">
                                 <h3>{{ $event->interested }}</h3>                                   {{-- Number of people interested--}}
                             </li>
 
@@ -153,7 +153,7 @@
                             </li>
 
                             <li>
-                                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                                <img class="icon" src="/images/temp/icons/thumbs_up.png">
                                 <h3>{{ $event->interested }}</h3>                                   {{-- Number of people interested--}}
                             </li>
 
@@ -242,7 +242,7 @@
                             </li>
 
                             <li>
-                                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                                <img class="icon" src="/images/temp/icons/thumbs_up.png">
                                 <h3>{{ $event->interested }}</h3>                                   {{-- Number of people interested--}}
                             </li>
 
