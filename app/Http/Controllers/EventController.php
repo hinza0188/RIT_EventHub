@@ -146,6 +146,8 @@ class EventController extends Controller {
         foreach ($interested_query as $item){
             if( $item->user_id == $uid){
                 $event->get_interested()->detach($uid);
+                $event->interested--;
+                $event->save();
                 break;
             }
         }
