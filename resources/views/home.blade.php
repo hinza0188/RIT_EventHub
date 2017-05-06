@@ -293,8 +293,8 @@
                                 </div>
 
                                 <div class="column attending">
-                                    <p>12/40</p>                                                            {{-- Number of people attending--}}
-                                    <img src="/images/temp/icons/person-icon.png" alt="icon" class="icon">
+                                    <p><i class="fa fa-user-circle-o" aria-hidden="true"></i> {{ $item->joined }} / {{ $item->max }}</p><br/>
+                                    <h4 class="pull-right"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> {{ $item->interested }}</h4>
                                 </div>
                             </div>
                         </div>
@@ -305,8 +305,8 @@
                                 <figure class="thumb">
                                     <img  src="{{ asset($item->imgURL) }}" alt="picture">               {{-- Event picture--}}
                                 </figure>{{--This figure elment holds the picture--}}
-                                <button class="join-button" onclick="window.location = '/event/{{$item->id}}/{{Auth::user()->id}}/join' ">Join</button>
-                                <button class="interested-button" onclick="window.location = '/event/{{$item->id}}/{{Auth::user()->id}}/interested' ">Interested</button>
+                                <button style="font-size:1em;" class="join-button" onclick="window.location = '/event/{{$item->id}}/{{Auth::user()->id}}/join' "><i class="fa fa-sign-in" aria-hidden="true"></i> Join</button>
+                                <button style="font-size:1em;" class="interested-button" onclick="window.location = '/event/{{$item->id}}/{{Auth::user()->id}}/interested' "><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Interested</button>
                             </div>
 
 
@@ -321,7 +321,12 @@
                                 <ul>
                                     <li>
                                         <img class="icon" src="/images/temp/icons/person-icon.png">
-                                        <h3>12/40</h3>                                                       {{-- Number of people attending--}}
+                                        <h3>{{ $item->joined }} / {{ $item->max }}</h3>                                                       {{-- Number of people attending--}}
+                                    </li>
+
+                                    <li>
+                                        <img class="icon" src="/images/temp/icons/thumbs_up.png">
+                                        <h3>{{ $item->interested }}</h3>                                   {{-- Number of people interested--}}
                                     </li>
 
                                     <li>
@@ -337,7 +342,7 @@
                                     </li>
                                 </ul>
 
-                                <button class="event-page-button" onclick="window.location = '{{ route('event.show', ['$id'=>$item->id]) }}'"> View Event Page </button>
+                                <button style="font-size:1em;" class="event-page-button" onclick="window.location = '{{ route('event.show', ['$id'=>$item->id]) }}'"><i class="fa fa-external-link-square" aria-hidden="true"></i> View Event Page </button>
                             </div>
                         </div>
                     </div>
@@ -397,8 +402,8 @@
                                     </div>
 
                                     <div class="column attending">
-                                        <p>12/40</p>                                                            {{-- Number of people attending--}}
-                                        <img src="/images/temp/icons/person-icon.png" alt="icon" class="icon">
+                                        <p><i class="fa fa-user-circle-o" aria-hidden="true"></i> {{ $event->joined }} / {{ $event->max }}</p><br/>
+                                        <h4 class="pull-right"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> {{ $event->interested }}</h4>
                                     </div>
                                 </div>
                             </div>
@@ -411,8 +416,8 @@
                                     <figure class="thumb">
                                         <img  src="{{ asset($event->imgURL) }}" alt="picture">               {{-- Event picture--}}
                                     </figure>{{--This figure elment holds the picture--}}
-                                    <button class="join-button" onclick="window.location = '/event/{{$event->id}}/{{Auth::user()->id}}/join' ">Join</button>
-                                    <button class="interested-button" onclick="window.location = '/event/{{$event->id}}/{{Auth::user()->id}}/interested' ">Interested</button>
+                                    <button style="font-size:1em;" class="join-button" onclick="window.location = '/event/{{$item->id}}/{{Auth::user()->id}}/join' "><i class="fa fa-sign-in" aria-hidden="true"></i> Join</button>
+                                    <button style="font-size:1em;" class="interested-button" onclick="window.location = '/event/{{$item->id}}/{{Auth::user()->id}}/interested' "><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Interested</button>
                                 </div>
 
 
@@ -427,7 +432,12 @@
                                     <ul>
                                         <li>
                                             <img class="icon" src="/images/temp/icons/person-icon.png">
-                                            <h3>12/40</h3>                                                       {{-- Number of people attending--}}
+                                            <h3>{{ $event->joined }} / {{ $event->max }}</h3>                   {{-- Number of people attending--}}
+                                        </li>
+
+                                        <li>
+                                            <img class="icon" src="/images/temp/icons/thumbs_up.png">
+                                            <h3>{{ $event->interested }}</h3>                                   {{-- Number of people interested--}}
                                         </li>
 
                                         <li>
@@ -443,7 +453,8 @@
                                         </li>
                                     </ul>
 
-                                    <button class="event-page-button" onclick="window.location = '{{ route('event.show', ['$id'=>$event->id]) }}'"> View Event Page </button>
+                                    <button style="font-size:1em;" class="event-page-button event-font" onclick="window.location = '{{ route('event.show', ['$id'=>$event->id]) }}'"><i class="fa fa-external-link-square" aria-hidden="true"></i> View Event Page </button>
+
 
 
                                 </div>
