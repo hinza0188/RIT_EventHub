@@ -12,7 +12,7 @@ Homestead.yaml
 .iml
 
 # Mac_OSX
-/.DS_Store
+*/.DS_Store
 
 # this is the laravel key file
 .env
