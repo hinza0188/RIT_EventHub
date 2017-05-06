@@ -71,7 +71,6 @@ class EventController extends Controller {
 
     public function create() {
         session(['create_event_success' => true]);
-
         return view('event.create');
     }
 
@@ -220,5 +219,7 @@ class EventController extends Controller {
 
         return view('event.myEvents', compact('eventsCreated', 'eventsInterested', 'eventsJoined'));
     }
+
+
 
 }

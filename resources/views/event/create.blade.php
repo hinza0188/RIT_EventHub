@@ -52,7 +52,7 @@
             </div>
 
             <div id="submit-container">
-                <button type="submit" class="btn btn-default">Submit</button>
+                <button id='submit' type="submit" class="btn btn-default">Submit</button>
             </div>
 
             <input style="display:none" name="interested" value="0">
@@ -62,6 +62,11 @@
 
     </div>
 
+    <script>
+       $('#submit').click(function () {
+
+       });
+    </script>
 
     <div style="margin-bottom: 100px;"></div>
 @endsection
