@@ -32,13 +32,18 @@
             </div>
 
             <div class="form-group">
+                <label for="imgURL">Event Image</label>
+                <input type="file" id="imgURL" name="imgURL">
+            </div>
+
+            <div class="form-group">
                 <label for="location">Location</label>
                 <input type="text" class="form-control" id="location" placeholder="Location" name="location">
             </div>
 
             <div class="form-group">
-                <label for="imgURL">Event Image</label>
-                <input type="file" id="imgURL" name="imgURL">
+                <label for="max">Max Participants</label>
+                {!! Form::number('max', '0') !!}
             </div>
 
             <div class="form-group">

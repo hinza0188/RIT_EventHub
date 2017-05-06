@@ -29,8 +29,9 @@
                             </div>
 
                             <div class="column attending">
-                                <p>12/40</p>                                                            {{-- Number of people attending--}}
-                                <img src="/images/temp/icons/person-icon.png" alt="icon" class="icon">
+                                {{-- Number of people attending--}}
+                                <p><i class="fa fa-user-circle-o" aria-hidden="true"></i> {{ $event->joined }} / {{ $event->max }}</p><br/>
+                                <h4 class="pull-right"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> {{ $event->interested }}</h4>
                             </div>
                         </div>
                     </div>
@@ -59,7 +60,12 @@
                             <ul>
                                 <li>
                                     <img class="icon" src="/images/temp/icons/person-icon.png">
-                                    <h3>12/40</h3>                                                       {{-- Number of people attending--}}
+                                    <h3>{{ $event->joined }} / {{ $event->max }}</h3>                   {{-- Number of people attending--}}
+                                </li>
+
+                                <li>
+                                    <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                                    <h3>{{ $event->interested }}</h3>                                   {{-- Number of people interested--}}
                                 </li>
 
                                 <li>
@@ -70,7 +76,7 @@
                                 <li>
                                     <img class="icon" src="/images/temp/icons/clock-icon.png">
                                     <h3>
-                                        {{ $event->date }}                                                        {{-- Date --}}
+                                        {{ $event->date }}                                              {{-- Date --}}
                                     </h3>
                                 </li>
                             </ul>

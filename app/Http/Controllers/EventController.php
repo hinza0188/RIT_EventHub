@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Event;
 use App\User;
 use DB;
-use Symfony\Component\Console\Output\ConsoleOutput;
 
 class EventController extends Controller {
     public function index() {
@@ -33,7 +32,7 @@ class EventController extends Controller {
             $username = "$user->first_name $user->last_name";
 
             // add formatted name to array
-            array_push($attendees, $username );
+            array_push($attendees, $username);
         }
 
 
@@ -122,10 +121,12 @@ class EventController extends Controller {
             }
         }
 
-        // if we have not marked ourself as interested and we have not joined the event,
-        // mark ourself as interested
+        // if we have not marked ourselves as interested and we have not joined the event,
+        // mark ourselves as interested
         if(!$is_interested && !$is_attending){
             $event->get_interested()->attach($uid);
+            $event->interested++;
+            $event->save();
         }
 
         return redirect()->route('event.show', ['$id'=>$eid]);
@@ -167,6 +168,8 @@ class EventController extends Controller {
         // if we have not joined, join the event
         if(!$is_joined){
             $event->get_joined()->attach($uid);
+            $event->joined++;   // increment the number of attendee
+            $event->save();     // and save it
         }
 
 

@@ -13,14 +13,14 @@
             <br>
             <br>
 
-            <h3>Attending:</h3>
+            <h3>Attending( {{ $event->joined }} ):</h3>
             <ul>
                 @foreach($attendees as $attendee)
                     <li>{{$attendee}}</li>
                 @endforeach
             </ul>
 
-            <h3>Interested:</h3>
+            <h3>Interested( {{ $event->interested }} ):</h3>
             <ul>
                 @foreach($interested_users as $user)
                     <li>{{$user}}</li>
