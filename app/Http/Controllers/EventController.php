@@ -16,7 +16,8 @@ class EventController extends Controller {
     public function show($id) {
         $event = Event::find($id);
 
-        $successfully_joined = session('successfully_joined');
+        $successfully_joined  = session('successfully_joined');
+        $create_event_success = session('create_event_success');
 
         //---------------  Load Attending users ---------------//
 
@@ -63,12 +64,13 @@ class EventController extends Controller {
 
 
         // create dictionary to be passed to view
-        $dict = ['attendees'=>$attendees, 'interested_users' => $interested_users ,'event'=>$event,'success' => $successfully_joined];
+        $dict = ['attendees'=>$attendees, 'interested_users' => $interested_users ,'event'=>$event,'success' => $successfully_joined,'created'=>$create_event_success];
 
         return view('event.eventMainPage', $dict);
     }
 
     public function create() {
+        session(['create_event_success' => true]);
         return view('event.create');
     }
 
@@ -217,5 +219,7 @@ class EventController extends Controller {
 
         return view('event.myEvents', compact('eventsCreated', 'eventsInterested', 'eventsJoined'));
     }
+
+
 
 }
